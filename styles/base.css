@@ -1,0 +1,159 @@
+/* Typography */
+:root{
+  --brand-blue:#0E5355;
+  --background:#0e2f55;
+  --brand-dark:#333;
+  --card-bg:#fff;
+  --muted:#6b6b6b;
+  --max-width:1100px;
+  --radius:10px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--brand-dark);
+  background: var(--background); /* page background band color (header/footer) */
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* header */
+header{
+  background:var(--brand-blue);
+  color:white;
+  padding:14px 20px;
+  text-align:center;
+  border-bottom:6px solid rgba(0,0,0,0.25);
+}
+
+/* course-title as block to center */
+#course-title{
+  display:block;
+  font-family: "Merriweather", serif;
+  font-size:1.35rem;
+  font-weight:700;
+  letter-spacing:0.6px;
+  margin-bottom:8px;
+}
+
+/* nav as flex */
+nav ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  gap:18px;
+  justify-content:space-around;
+  align-items:center;
+  flex-wrap:wrap;
+}
+nav a{
+  color:white;
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:6px;
+  transition: all .18s ease;
+  font-weight:600;
+}
+nav a:hover,
+nav a:focus{
+  background:rgba(255, 255, 255, 0.12);
+  box-shadow:0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* main container */
+main{
+  max-width:var(--max-width);
+  margin:28px auto;
+  padding:18px;
+  background:transparent;
+  display:grid;
+}
+
+/* page heading (your name) */
+main h1{
+  text-align:center;
+  color:#ffffff;
+  font-family:"Merriweather",serif;
+  margin:0 0 18px 0;
+  font-size:2rem;
+  text-shadow:0 1px 0 rgba(0,0,0,0.25);
+  grid-row: 1;
+  grid-column: 1/4;
+}
+
+/* cards grid */
+main{
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+  gap:20px;
+  align-items:start;
+}
+
+/* card base style */
+.card{
+  background:var(--card-bg);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:0 2px 0 rgba(0,0,0,0.05);
+  border:2px solid rgba(0,0,0,0.06);
+  color:var(--brand-dark);
+}
+
+/* responsive: stack on small screens */
+@media (max-width:900px){
+  main{
+    grid-template-columns:1fr;
+    padding:12px;
+  }
+}
+
+/* about section layout inside card */
+.about .about-grid{
+  display:grid;
+  grid-template-columns: 1fr 220px;
+  gap:16px;
+  align-items:start;
+}
+@media (max-width:900px){
+  .about .about-grid{ grid-template-columns:1fr; }
+}
+
+.about h3{
+  margin-top:6px;
+  text-align:center;
+  font-family:"Merriweather",serif;
+}
+
+/* images */
+.profile{
+  width:160px;
+  height:auto;
+  display:block;
+  margin:0 auto 12px;
+  border-radius:6px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.08);
+}
+.flag{ width:120px; height:auto; display:block; margin:0 auto; border:1px solid #ddd;}
+figure{ margin:0; text-align:center; font-size:0.85rem; color:var(--muted) }
+
+/* resources list */
+.resources ul{ padding-left:18px; margin:8px 0 0 0; }
+.resources li{ margin:8px 0; }
+.resources a{ color:#2b2b8f; text-decoration:underline; }
+
+/* footer */
+footer{
+  margin-top:26px;
+  background:var(--brand-blue);
+  color:white;
+  padding:14px 18px;
+  text-align:center;
+  border-top:6px solid rgba(0,0,0,0.15);
+  position:relative;
+}
+footer p{ margin:6px 0; font-size:0.95rem; }
+#lastModified{ font-size:0.85rem; color:#fffbcc; margin-top:4px; }
