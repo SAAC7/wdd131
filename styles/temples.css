@@ -1,0 +1,176 @@
+:root {
+    --background_1: #fff;
+    --background_2: #0e2f55;
+    --color_1: #333;
+    --color_2: #fff;
+    --max-width: 1100px;
+    --radius: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Satisfy', "Playwrite MX Guides", Arial, sans-serif;
+    background-color: var(--background_1);
+    color: var(--color_1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header normal */
+header {
+    background-color: var(--background_2);
+    color: var(--color_2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+#menu-toggle {
+    font-size: 1.8rem;
+    background: none;
+    color: var(--color_2);
+    cursor: pointer;
+}
+
+/* Menú flotante */
+nav#nav-menu {
+    position: fixed;
+    /* Para que esté sobre todo */
+    top: 0;
+    right: -100%;
+    /* Oculto por defecto */
+    width: 250px;
+    height: 100%;
+    background-color: var(--background_2);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    transition: right 0.3s ease;
+    z-index: 999;
+}
+
+nav#nav-menu.show {
+    right: 0;
+    /* Aparece */
+}
+
+/* Botón cerrar dentro del menú */
+#menu-close {
+    align-self: flex-end;
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--color_2);
+    cursor: pointer;
+}
+
+/* Lista de enlaces */
+nav#nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+nav#nav-menu li {
+    list-style: none;
+    padding: 0.8rem 0;
+}
+
+nav#nav-menu a {
+    color: var(--color_2);
+    text-decoration: none;
+}
+
+nav#nav-menu a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+main h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-items: center;
+}
+
+.gallery figcaption {
+    font-family: "Playwrite MX Guides";
+}
+
+figure {
+    text-align: center;
+    border-radius: 8px;
+}
+
+figure img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+}
+
+figure img:hover {
+    transform: scale(1.5);
+    object-fit: contain;
+}
+
+figcaption {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+
+footer {
+    background-color: var(--background_2);
+    color: var(--color_2);
+    text-align: center;
+    padding: 1rem;
+}
+
+footer p {
+    font-family: poppins;
+    font-style: italic;
+}
+
+.playwrite-mx-guides-regular {
+    font-family: "Playwrite MX Guides", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.satisfy-regular {
+    font-family: "Satisfy", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
