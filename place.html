@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guatemala - Land of Eternal Spring</title>
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+    <script src="scripts/getdates.js"defer></script>
+</head>
+<body>
+    <header>
+        <h1>Guatemala</h1>
+    </header>
+    
+    <main>
+        <section class="data-section">
+            <h2>Data</h2>
+            <div class="data-content">
+                <p><strong>Area:</strong> 108,889 sq km</p>
+                <p><strong>Population:</strong> 17,980,803</p>
+                <p><strong>Capital:</strong> Guatemala City</p>
+                <p><strong>Languages:</strong> Spanish, 22 Mayan languages</p>
+                <p><strong>Currency:</strong> Guatemalan Quetzal</p>
+                <p><strong>Time Zone:</strong> UTC-6</p>
+                <p><strong>Calling Code:</strong> +502</p>
+                <p><strong>Internet TLD:</strong> .gt</p>
+            </div>
+        </section>
+        
+        <picture class="hero-image">
+            <!-- WebP format with fallbacks -->
+            <source 
+                srcset="images/guatemala-small.webp 480w, 
+                        images/guatemala-medium.webp 800w"
+                media="(max-width: 768px)"
+                type="image/webp">
+            <source 
+                srcset="images/guatemala-large.webp 1200w"
+                media="(min-width: 769px)"
+                type="image/webp">
+            <!-- Fallback to regular images -->
+            <source 
+                srcset="images/guatemala-small.jpg 480w, 
+                        images/guatemala-medium.jpg 800w"
+                media="(max-width: 768px)">
+            <img 
+                src="images/guatemala-large.jpg" 
+                alt="Landscape of Guatemala with volcanoes and traditional textiles">
+        </picture>
+        
+        <section class="weather-section">
+            <h2>Weather</h2>
+            <div class="weather-content">
+                <div class="weather-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M6 16a5 5 0 1 1 5-5 5 5 0 0 1-5 5zm0-8a3 3 0 1 0 3 3 3 3 0 0 0-3-3zm5-1h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2zm1-7h-2v2h2zm0 4h-2v2h2zm-9 0H5v2h2zm0-4H5v2h2zm8-6h2v2h-2zm-4 0h2v2h-2zm-4 0h2v2H7z"/>
+                    </svg>
+                </div>
+                <p><strong>Temperature:</strong> <span id="temperature">20</span> °C</p>
+                <p><strong>Conditions:</strong> Partly Cloudy</p>
+                <p><strong>Wind:</strong> <span id="wind-speed">8</span> km/h</p>
+                <p><strong>Wind Chill:</strong> <span id="wind-chill">N/A</span></p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>©<span id="currentyear"></span> 💚 Saúl Abraham Arana Calderón 💚 Guatemala</p>
+        <p id="lastModified"></p>
+    </footer>
+   
+</body>
+</html>

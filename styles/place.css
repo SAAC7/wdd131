@@ -1,0 +1,129 @@
+/* styles/place.css */
+:root {
+    --primary-color: #4997D0; /* Blue from Guatemala flag */
+    --secondary-color: #FFFFFF; /* White from Guatemala flag */
+    --accent-color: #CE1126; /* Red from Guatemala flag */
+    --text-color: #333333;
+    --background-color: #f9f9f9;
+    --border-color: #e0e0e0;
+    --heading-font: 'Arial', sans-serif;
+    --body-font: 'Georgia', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 5px;
+}
+
+h1 {
+    font-family: var(--heading-font);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.data-section, .weather-section {
+    background-color: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.data-content p, .weather-content p {
+    margin-bottom: 0.5rem;
+}
+
+.hero-image {
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.weather-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.weather-icon svg {
+    fill: var(--primary-color);
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+/* Media Query for Wider Screens */
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "data image"
+            "weather image";
+    }
+    
+    .data-section {
+        grid-area: data;
+    }
+    
+    .weather-section {
+        grid-area: weather;
+    }
+    
+    .hero-image {
+        grid-area: image;
+    }
+    
+    .weather-icon {
+        display: none;
+    }
+    
+    .weather-section h2::after {
+        content: " ⛅";
+        margin-left: 0.5rem;
+    }
+}
