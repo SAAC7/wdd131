@@ -6,7 +6,7 @@
     --text-color: #333333;
     --background-color: #f9f9f9;
     --border-color: #e0e0e0;
-    --heading-font: 'Arial', sans-serif;
+    --heading-font: 'Poppins', sans-serif;
     --body-font: 'Georgia', serif;
 }
 
@@ -14,6 +14,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', 'Courier New', Courier, monospace;
 }
 
 body {
@@ -26,10 +27,11 @@ body {
     padding: 1rem;
 }
 
-header {
+header , footer {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0;
     padding: 1rem;
+   
     background-color: var(--primary-color);
     color: var(--secondary-color);
     border-radius: 5px;
@@ -85,33 +87,35 @@ main {
     margin-bottom: 1rem;
 }
 
-.weather-icon svg {
-    fill: var(--primary-color);
-}
-
-footer {
-    text-align: center;
-    margin-top: 2rem;
-    padding: 1rem;
-    border-top: 1px solid var(--border-color);
-    font-size: 0.9rem;
+.weather-icon img {
+    width: 5vh;
+    height: auto;
 }
 
 /* Media Query for Wider Screens */
 @media (min-width: 768px) {
-    main {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: 
-            "data image"
-            "weather image";
+    .picture-container{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        position: relative;
     }
-    
+        
     .data-section {
         grid-area: data;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        opacity: 0.8;
     }
     
     .weather-section {
         grid-area: weather;
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        opacity: 0.8;
+
     }
     
     .hero-image {

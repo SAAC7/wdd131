@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guatemala - Land of Eternal Spring</title>
     <link rel="stylesheet" href="styles/place.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="scripts/place.js" defer></script>
     <script src="scripts/getdates.js"defer></script>
 </head>
@@ -14,55 +17,52 @@
     </header>
     
     <main>
-        <section class="data-section">
-            <h2>Data</h2>
-            <div class="data-content">
-                <p><strong>Area:</strong> 108,889 sq km</p>
-                <p><strong>Population:</strong> 17,980,803</p>
-                <p><strong>Capital:</strong> Guatemala City</p>
-                <p><strong>Languages:</strong> Spanish, 22 Mayan languages</p>
-                <p><strong>Currency:</strong> Guatemalan Quetzal</p>
-                <p><strong>Time Zone:</strong> UTC-6</p>
-                <p><strong>Calling Code:</strong> +502</p>
-                <p><strong>Internet TLD:</strong> .gt</p>
-            </div>
-        </section>
         
-        <picture class="hero-image">
-            <!-- WebP format with fallbacks -->
-            <source 
-                srcset="images/guatemala-small.webp 480w, 
-                        images/guatemala-medium.webp 800w"
-                media="(max-width: 768px)"
-                type="image/webp">
-            <source 
-                srcset="images/guatemala-large.webp 1200w"
-                media="(min-width: 769px)"
-                type="image/webp">
-            <!-- Fallback to regular images -->
-            <source 
-                srcset="images/guatemala-small.jpg 480w, 
-                        images/guatemala-medium.jpg 800w"
-                media="(max-width: 768px)">
-            <img 
-                src="images/guatemala-large.jpg" 
-                alt="Landscape of Guatemala with volcanoes and traditional textiles">
-        </picture>
-        
-        <section class="weather-section">
-            <h2>Weather</h2>
-            <div class="weather-content">
-                <div class="weather-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M6 16a5 5 0 1 1 5-5 5 5 0 0 1-5 5zm0-8a3 3 0 1 0 3 3 3 3 0 0 0-3-3zm5-1h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2zm1-7h-2v2h2zm0 4h-2v2h2zm-9 0H5v2h2zm0-4H5v2h2zm8-6h2v2h-2zm-4 0h2v2h-2zm-4 0h2v2H7z"/>
-                    </svg>
+        <div class="picture-container">
+           
+            <picture class="hero-image">
+                <!-- WebP format with fallbacks -->
+                <source 
+                    srcset="images/hero-large.webp"
+                    media="(min-width: 1000px)"
+                    type="image/webp">
+                <source 
+                    srcset="images/hero-medium.webp"
+                    media="(min-width: 768px)"
+                    type="image/webp">
+                <!-- Fallback to regular images -->
+                <img 
+                    src="images/hero-small.webp" 
+                    alt="Portrait of Antigua Guatemala with volcanoes in the background" width="250" height="500">
+            </picture>
+            
+             <div class="data-section">
+                <h2>Data</h2>
+                <div class="data-content">
+                    <p><strong>Area:</strong> 108,888 sq km</p>
+                    <p><strong>Population:</strong> 18,125,000</p>
+                    <p><strong>Capital:</strong> Guatemala City</p>
+                    <p><strong>Languages:</strong> Spanish, 22 Mayan languages</p>
+                    <p><strong>Currency:</strong> Guatemalan Quetzal</p>
+                    <p><strong>Time Zone:</strong> UTC-6</p>
+                    <p><strong>Calling Code:</strong> +502</p>
+                    <p><strong>Internet TLD:</strong> .gt</p>
                 </div>
-                <p><strong>Temperature:</strong> <span id="temperature">20</span> °C</p>
-                <p><strong>Conditions:</strong> Partly Cloudy</p>
-                <p><strong>Wind:</strong> <span id="wind-speed">8</span> km/h</p>
-                <p><strong>Wind Chill:</strong> <span id="wind-chill">N/A</span></p>
             </div>
-        </section>
+            
+            <div class="weather-section">
+                <h2>Weather</h2>
+                <div class="weather-content">
+                    <div class="weather-icon">
+                        <img src="images/1530391_weather_clouds_sun_sunny_icon.svg" alt="Partly Cloudy Icon">
+                    </div>
+                    <p><strong>Temperature:</strong> <span id="temperature">20</span> °C</p>
+                    <p><strong>Conditions:</strong> Partly Cloudy</p>
+                    <p><strong>Wind:</strong> <span id="wind-speed">8</span> km/h</p>
+                    <p><strong>Wind Chill:</strong> <span id="wind-chill">N/A</span></p>
+                </div>
+            </div>
+        </div>
     </main>
     
     <footer>
