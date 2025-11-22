@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Album</title>
+    <meta name="description" content="This page contains an album with my favorite temples.">
+    <meta name="author" content="Saúl Abraham Arana Calderón">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playwrite+MX+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Satisfy&display=swap"
+        rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <link rel="stylesheet" href="styles/filtered-temples-large.css">
+    <script src="scripts/filtered-temples.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <h1>Temple Album</h1>
+        <button id="menu-toggle" aria-label="Menu">&#9776;</button>
+        <nav id="nav-menu">
+            <button id="menu-close" aria-label="Cerrar">X</button>
+            <ul>
+                <li><a href="#" id="home-link">Home</a></li>
+                <li><a href="#" id="old-link">Old</a></li>
+                <li><a href="#" id="new-link">New</a></li>
+                <li><a href="#" id="large-link">Large</a></li>
+                <li><a href="#" id="small-link">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Home</h1>
+        <section class="gallery">
+           <!-- <figure>
+                <figcaption>Official Flag of Guatemala</figcaption>
+                <div><b>Location:</b> Guatemala</div>
+                <div><b>Adopted:</b> 1871</div>
+                <div><b>Proportions:</b> 2:3</div>
+                <img src="images/flag_of_guatemala.svg" alt="Official Flag" class="flag" />
+            </figure> -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> - Saúl Abraham Arana Calderón - Guatemala</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
