@@ -1,102 +1,199 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ComputerFix Pro – Website Plan</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AB7ec — Website Planning Document</title>
 
-    <!-- Typography from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/styles.css">
+  <!-- Tipografías (usar máximo 2-3 fuentes) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+  <main>
+    <header>
+      <div class="brand" aria-hidden="true">
+        <div class="logo" role="img" aria-label="AB7ec logo">AB7ec</div>
+        <div style="text-align:left;">
+          <div style="font-family: 'Montserrat', sans-serif; font-weight:600; color:var(--primary-dark);">AB7ec</div>
+          <small style="color:var(--muted);">Servicio profesional de reparación de computadoras — (el 7 representa la 't')</small>
+        </div>
+      </div>
+      <p style="margin-top:12px; color:var(--muted);">Documento de planificación del sitio — entrega W05</p>
+    </header>
 
-<header>
-    <h1>Website Planning Document</h1>
-    <h2>ComputerFix Pro</h2>
-</header>
+    <!-- 1. Site Name -->
+    <section>
+      <h2>1. Site Name</h2>
+      <p><strong>AB7ec</strong> — (se pronuncia "ABTec"; el dígito <strong>7</strong> representa la letra <strong>t</strong>). El nombre es corto, memorable y comunica la naturaleza técnica del servicio.</p>
+      <p><strong>Optional domain:</strong> ab7ec.com (disponibilidad no verificada en esta entrega).</p>
+    </section>
 
-<section>
-    <h2>1. Site Name</h2>
-    <p><strong>ComputerFix Pro</strong></p>
-    <p>Elegí este nombre porque es profesional, fácil de recordar y comunica claramente el propósito del servicio: reparación y mantenimiento técnico para computadoras.</p>
-    <p><strong>Optional domain:</strong> computerfix-pro.com</p>
-</section>
+    <!-- 2. Site Purpose -->
+    <section>
+      <h2>2. Site Purpose</h2>
+      <p>El sitio proporcionará información y contacto para servicios de diagnóstico, reparación de hardware, mantenimiento preventivo, instalación/actualización de sistemas operativos, recuperación de datos y optimización del rendimiento. Además, incluirá una sección técnica interna con guías y tutoriales para técnicos.</p>
 
-<section>
-    <h2>2. Site Purpose</h2>
-    <p>
-        El propósito del sitio es ofrecer información clara sobre los servicios de reparación de computadoras,
-        mantenimiento preventivo, optimización, recuperación de datos y soporte técnico.
-        El sitio servirá como punto de contacto para los clientes, mostrando precios, servicios y un formulario de contacto.
-    </p>
-</section>
+      <div class="note">
+        <strong>Sección para técnicos:</strong> Área con guías prácticas (ej. diagnóstico de fallas, reemplazo de SSD, recuperación de datos, limpieza de sistemas, procedimientos de seguridad y checklist de verificación). Esta sección será de acceso público inicialmente, con opción de futuras páginas protegidas.
+      </div>
+    </section>
 
-<section>
-    <h2>3. Scenarios</h2>
-    <ul>
-        <li>“Mi computadora está lenta, ¿qué servicio me sirve y cuánto costará?”</li>
-        <li>“¿Cómo puedo contactar al técnico y en qué horarios trabaja?”</li>
-        <li>“¿Qué tipos de reparaciones realizan y tienen garantía?”</li>
-    </ul>
-</section>
+    <!-- 3. Scenarios -->
+    <section>
+      <h2>3. Scenarios</h2>
+      <ul>
+        <li><strong>Cliente:</strong> "Mi laptop está muy lenta, ¿qué servicio necesito y cuánto costará?"</li>
+        <li><strong>Cliente:</strong> "¿Pueden recuperar archivos de un disco que no arranca?"</li>
+        <li><strong>Técnico:</strong> "¿Dónde encuentro la guía para reemplazar la unidad SSD en modelos comunes?"</li>
+        <li><strong>Cliente:</strong> "¿Cuál es el horario y cómo puedo agendar una cita?"</li>
+      </ul>
+    </section>
 
-<section>
-    <h2>4. Color Schema</h2>
-    <p><strong>Primary – #1e90ff:</strong> Titulares, botones y acentos importantes.</p>
-    <p><strong>Secondary – #f0f0f0:</strong> Color de fondo del sitio para lograr limpieza visual.</p>
-    <p><strong>Accent – #111:</strong> Texto principal, íconos y contrastes.</p>
-</section>
+    <!-- 4. Color Schema -->
+    <section>
+      <h2>4. Color Schema</h2>
+      <p>He definido cuatro colores principales para mantener coherencia visual en todo el sitio:</p>
+      <ul>
+        <li><strong>Primario oscuro</strong> — <code>#1D2025</code> (Encabezados, hero background, y elementos de marca).</li>
+        <li><strong>Gris técnico</strong> — <code>#56616E</code> (Fondos secundarios, bordes, texto secundario).</li>
+        <li><strong>Azul profesional</strong> — <code>#006BBD</code> (Botones principales, enlaces, CTA).</li>
+        <li><strong>Azul profundo</strong> — <code>#003165</code> (Acentos secundarios, hover states, iconografía).</li>
+      </ul>
 
-<section>
-    <h2>5. Typography</h2>
-    <p><strong>Montserrat:</strong> Usada para los encabezados principales (h1, h2) para dar un estilo profesional.</p>
-    <p><strong>Roboto:</strong> Usada para párrafos y contenido general por su excelente legibilidad en pantallas.</p>
-</section>
+      <div class="swatches" aria-hidden="true">
+        <div class="swatch s1">#1D2025</div>
+        <div class="swatch s2">#56616E</div>
+        <div class="swatch s3">#006BBD</div>
+        <div class="swatch s4">#003165</div>
+      </div>
 
-<section>
-    <h2>6. Wireframe – Mobile View</h2>
-    <div class="wireframe">
-        ┌───────────────────────────────┐
-        │        LOGO / NAME           │
-        ├───────────────────────────────┤
-        │            MENU               │
-        ├───────────────────────────────┤
-        │        HERO IMAGE             │
-        ├───────────────────────────────┤
-        │  SERVICES (cards stacked)    │
-        ├───────────────────────────────┤
-        │   PRICING SECTION            │
-        ├───────────────────────────────┤
-        │     CONTACT FORM              │
-        ├───────────────────────────────┤
-        │          FOOTER               │
-        └───────────────────────────────┘
-    </div>
-</section>
+      <p>Dónde se aplican:</p>
+      <ul>
+        <li><strong>Encabezados / Logo:</strong> <code>#1D2025</code></li>
+        <li><strong>Fondo de tarjetas / bordes:</strong> <code>#56616E</code></li>
+        <li><strong>Botones / llamadas a la acción:</strong> <code>#006BBD</code></li>
+        <li><strong>Hover / links secundarios / detalles:</strong> <code>#003165</code></li>
+      </ul>
+    </section>
 
-<section>
-    <h2>7. Wireframe – Desktop View</h2>
-    <div class="wireframe">
-        ┌───────────────────────────────────────────────┐
-        │ LOGO/NAME      |         NAVIGATION MENU      │
-        ├───────────────────────────────────────────────┤
-        │               HERO IMAGE                      │
-        ├───────────────────────────────────────────────┤
-        │ SERVICES (cards in 3 columns)                 │
-        ├───────────────────────────────────────────────┤
-        │ PRICING (2-column layout)                     │
-        ├───────────────────────────────────────────────┤
-        │ CONTACT FORM (left) | INFO PANEL (right)      │
-        ├───────────────────────────────────────────────┤
-        │                     FOOTER                    │
-        └───────────────────────────────────────────────┘
-    </div>
-</section>
+    <!-- 5. Typography -->
+    <section>
+      <h2>5. Typography</h2>
+      <p>Fuentes seleccionadas (2):</p>
+      <ul>
+        <li><strong>Montserrat</strong> — Usada para encabezados (h1, h2) y logotipo para transmitir solidez y legibilidad en títulos.</li>
+        <li><strong>Roboto</strong> — Usada para el cuerpo de texto, listas, formularios y contenido técnico por su legibilidad en pantalla.</li>
+      </ul>
+      <p>Se aplican en este documento (ver encabezados y cuerpo) para cumplir el criterio de la rúbrica.</p>
+    </section>
 
-<footer>
-    <p>Last updated: <script>document.write(document.lastModified);</script></p>
-</footer>
+    <!-- 6. Wireframe Mobile -->
+    <section>
+      <h2>6. Wireframe — Mobile (esquema)</h2>
+      <div class="wireframe" aria-label="Wireframe mobile">
+Home
+┌───────────────────────┐
+│  [LOGO]  AB7ec        │
+│  [nav toggle]         │
+├───────────────────────┤
+│  HERO IMAGE / CTA     │
+│  "Diagnóstico rápido" │
+├───────────────────────┤
+│  SERVICIOS (stacked)  │
+│  - Diagnóstico        │
+│  - Reparación hardware│
+│  - Recuperación datos │
+├───────────────────────┤
+│  SECCIÓN: Guías Técnicas (cards stacked)│
+├───────────────────────┤
+│  FORMULARIO / CONTACTO│
+├───────────────────────┤
+│  FOOTER (info, horarios)│
+└───────────────────────┘
+      </div>
+    </section>
 
+    <!-- 7. Wireframe Desktop -->
+    <section>
+      <h2>7. Wireframe — Desktop (esquema)</h2>
+      <div class="wireframe" aria-label="Wireframe desktop">
+Desktop Home
+┌──────────────────────────────────────────────────────────────┐
+│ LOGO (left)        NAV (center)           CTA / CONTACT (right)│
+├──────────────────────────────────────────────────────────────┤
+│                       HERO (wide) / CTA                          │
+├──────────────────────────────────────────────────────────────┤
+│ SERVICES (3-column cards)                                      │
+│ [Diag]  [Repair]  [Recovery]                                   │
+├──────────────────────────────────────────────────────────────┤
+│ PRICING (two-column)     |   Guías Técnicas (list / link panel)│
+├──────────────────────────────────────────────────────────────┤
+│ CONTACT FORM (left)      |   TESTIMONIALS / INFO (right)       │
+├──────────────────────────────────────────────────────────────┤
+│ FOOTER: hours, address, small sitemap                          │
+└──────────────────────────────────────────────────────────────┘
+      </div>
+    </section>
+
+    <!-- 8. Testing checklist -->
+    <section>
+      <h2>8. Testing</h2>
+      <p>Auto-evaluación y herramientas a utilizar:</p>
+      <ul>
+        <li>HTML validator: <a href="https://validator.w3.org/nu" target="_blank" rel="noopener">W3C Nu Validator</a> — corregir errores reportados.</li>
+        <li>CSS validator: <a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener">W3C CSS Validator</a>.</li>
+        <li>Accesibilidad: Lighthouse / WAVE para revisar contrastes y etiquetas ARIA si es necesario.</li>
+        <li>Performance / SEO: Lighthouse y PageSpeed para recomendaciones (imágenes optimizadas, lazy-loading, meta tags).</li>
+      </ul>
+      <p>Notas rápidas:</p>
+      <ul>
+        <li>Contraste: usar `#006BBD` sobre blanco para CTAs (suficiente), y `#003165` para hover states.</li>
+        <li>Imágenes: usar tamaños responsive y `loading="lazy"` en galerías o listas.</li>
+      </ul>
+    </section>
+
+    <!-- 9. Content outline / Sitemap -->
+    <section>
+      <h2>9. Content Outline / Sitemap</h2>
+      <ul>
+        <li>Home — Hero, servicios, CTA</li>
+        <li>Servicios — páginas individuales por servicio (diagnóstico, hardware, software, recuperación)</li>
+        <li>Guías Técnicas — sección con artículos y guías por categoría (hardware, software, data recovery)</li>
+        <li>Precios — tarifas aproximadas y paquetes</li>
+        <li>Contacto — formulario, mapa, horario</li>
+        <li>Sobre Nosotros — información del equipo, garantías</li>
+      </ul>
+    </section>
+
+    <!-- 10. Extras -->
+    <section>
+      <h2>10. Técnicos — Guías sugeridas (ejemplos)</h2>
+      <ul>
+        <li>Guía: Diagnóstico rápido de POST/No boot</li>
+        <li>Guía: Cómo reemplazar SSD en laptops comunes (checklist)</li>
+        <li>Guía: Recuperación básica de archivos desde discos externos</li>
+        <li>Guía: Limpieza física segura (aspirado, pasta térmica, ventiladores)</li>
+        <li>Guía: Preparación de una imagen de sistema y restauración</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Documento creado para la entrega W05 — AB7ec</p>
+      <p>Última modificación: <span id="lastModified">—</span></p>
+    </footer>
+  </main>
+
+  <script>
+    // Mostrar la fecha de última modificación de forma segura
+    (function(){
+      const el = document.getElementById('lastModified');
+      if(el && document.lastModified){
+        el.textContent = document.lastModified;
+      } else if (el){
+        el.textContent = "No disponible";
+      }
+    })();
+  </script>
 </body>
 </html>
