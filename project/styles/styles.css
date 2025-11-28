@@ -1,0 +1,37 @@
+        :root {
+            --primary: #1e90ff;
+            /* Azul para encabezados */
+            --secondary: #f0f0f0;
+            /* Gris claro para fondos */
+            --accent: #111;
+            /* Texto principal */
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            background: var(--secondary);
+            color: var(--accent);
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 900px;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2 {
+            font-family: "Montserrat", sans-serif;
+            color: var(--primary);
+        }
+
+        .wireframe {
+            background: white;
+            padding: 15px;
+            border: 1px solid #ccc;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
