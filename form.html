@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/form.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Produc Review</h1>
+    </header>
+    <main>
+        <form action="review.html" method="get">
+            <fieldset class="product-card" >
+                <legend>Product Review Form</legend>
+
+                <label for="product-name" class="label-required" >Product Name</label>
+                <select name="product-name" id="product-name" required>
+                    <option value="" disabled selected>Choose a Product ...</option>
+                </select>
+
+                <div class="form-row">
+                    <label >Overall Raiting</label>
+                    <div class="raiting" role="radiogroup" aria-label="Overall raiting">
+                        <label class="star">
+                            <input type="radio" name="rating" id="rating-1" value="1" required>
+                            <span aria-hidden="true">&#9734</span>
+                            <span class="sr-only">1 star</span>
+                        </label>
+                        <label class="star">
+                            <input type="radio" name="rating" id="rating-2" value="2" >
+                            <span aria-hidden="true">&#9734&#9734</span>
+                            <span class="sr-only">2 star</span>
+                        </label>
+                        <label class="star">
+                            <input type="radio" name="rating" id="rating-3" value="3" >
+                            <span aria-hidden="true">&#9734&#9734&#9734</span>
+                            <span class="sr-only">3 star</span>
+                        </label>
+                        <label class="star">
+                            <input type="radio" name="rating" id="rating-4" value="4" >
+                            <span aria-hidden="true">&#9734&#9734&#9734&#9734</span>
+                            <span class="sr-only">4 star</span>
+                        </label>
+                        <label class="star">
+                            <input type="radio" name="rating" id="rating-5" value="5" >
+                            <span aria-hidden="true">&#9734&#9734&#9734&#9734&#9734</span>
+                            <span class="sr-only">5 star</span>
+                        </label>
+                    </div>
+                </div>
+
+                <lable  for="installdate">Date of Installation</lable>
+                <input type="date" id="installdate" name="installdate" required>
+            </fieldset>
+            <fieldset class="checkbox-group">
+                <legend>Which features did you find useful in the product? <em>(Check all that apply)</em></legend>
+                <label><input type="checkbox" name="features" id="durability" value="Durability">Durability</label>
+                <label><input type="checkbox" name="features" id="easeofuse" value="Ease of Use">Ease of Use</label>
+                <label><input type="checkbox" name="features" id="performance" value="Performance">Performance</label>
+                <label><input type="checkbox" name="features" id="design" value="Design">Design</label>
+            </fieldset>
+
+            <label for="reviewtext" class="optional">Written Review</label>
+            <textarea name="reviewtext" id="reviewtext" rows="6" placeholder="Write your review ..."></textarea>
+
+            <label for="username" class="optional">Your Name</label>
+            <input type="text" id="username" name="username" placeholder="Your Name">
+
+            <input type="submit" class="btn-submit" value="Post Review">
+
+        </form>
+
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> - Saúl Abraham Arana Calderón - Guatemala</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>

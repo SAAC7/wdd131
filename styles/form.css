@@ -1,0 +1,25 @@
+:root{
+    --blue-color: #161F77;
+    --purple--color: #320c2d;
+    --purple-light--color: #D4CBD3;
+    --font-color: #000000;
+    --heading-color: #ffffff;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+footer,header{
+    display: flex;
+    flex-direction: column;
+
+    width: 100vw;
+    background-color: var(--purple--color);
+    color: var(--heading-color);
+
+}
+.optional::after{
+    content: " (Optional)";
+    color: var(--blue-color);
+}
