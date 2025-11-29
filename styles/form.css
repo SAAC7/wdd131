@@ -1,25 +1,155 @@
-:root{
-    --blue-color: #161F77;
-    --purple--color: #320c2d;
-    --purple-light--color: #D4CBD3;
-    --font-color: #000000;
-    --heading-color: #ffffff;
+:root {
+    --brand: #3a0f2f;
+    --muted: #d9cfd6;
+    --card: #e9e1e6;
+    --accent: #19223a;
+    --maxw: 760px;
 }
-*{
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     margin: 0;
-    padding: 0;
-    box-sizing:border-box;
+    color: var(--accent);
+    background: #fff
 }
-footer,header{
+
+.site-header {
+    background: var(--brand);
+    color: #fff;
+    text-align: center;
+    padding: 28px 16px
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 2.2rem
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 24px
+}
+
+.card {
+    background: var(--muted);
+    max-width: var(--maxw);
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.08)
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    margin: 18px 0 8px
+}
+
+.label-required::after {
+    content: " *";
+    color: #b00020;
+    font-weight: 700
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    border-radius: 1rem;
+    font-size: 1rem;
+    background: #fff
+}
+
+textarea {
+    resize: vertical
+}
+
+.form-row {
+    margin-top: 10px
+}
+
+.rating {
+    display: flex;
+    gap: 18px;
+    align-items: center
+}
+
+.star {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem
+}
 
-    width: 100vw;
-    background-color: var(--purple--color);
-    color: var(--heading-color);
+.star input {
+    margin-top: 8px;
+    width: 28px;
+    height: 28px
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    margin: 10px 0
+}
+
+.optional {
+    font-weight: 400;
+    color: var(--brand);
+    font-size: 0.95rem
+}
+
+.btn-submit {
+    margin-top: 20px;
+    padding: 16px;
+    font-size: 1.5rem;
+    width: 100%;
+    border-radius: 1rem;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    background: #ececec;
+    transition: background-color 0.6s ease;
 
 }
-.optional::after{
-    content: " (Optional)";
-    color: var(--blue-color);
+.btn-submit:hover{
+    background: var(--brand);
+    color: var(--card);
+    cursor: pointer;
+    
+
+}
+
+.site-footer {
+    background: var(--brand);
+    color: #fff;
+    text-align: center;
+    padding: 22px
+}
+
+.site-footer p {
+    margin: 6px 0
+}
+
+.sr-only {
+    position: absolute;
+    left: -9999px
+}
+
+@media(min-width:820px) {
+    main {
+        padding: 40px
+    }
+
+    .card {
+        padding: 30px
+    }
 }
