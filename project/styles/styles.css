@@ -1,69 +1,184 @@
-/* ===== Paleta AB7ec ===== */
-    :root{
-      --primary-dark: #1D2025; /* primario oscuro - encabezados / hero bg */
-      --tech-gray:     #56616E; /* gris técnico - fondos secundarios / bordes */
-      --pro-blue:      #006BBD; /* azul profesional - botones, enlaces, acentos */
-      --deep-blue:     #003165; /* azul profundo - acentos secundarios */
-      --bg:            #F7F8F9; /* ligero para contraste */
-      --text:          #0b0b0b;
-      --muted:         #555b61;
-      --max-width:     980px;
-    }
+ :root {
+   --primary-dark: #1D2025;
+   /* Dark steel */
+   --tech-gray: #56616E;
+   /* Slate / secondary */
+   --pro-blue: #006BBD;
+   /* Bright tech blue (accent) */
+   --deep-blue: #003165;
+   /* Deep navy (brand) */
+   --page-bg: #F7F8F9;
+   --white: #ffffff;
+   --muted: #596067;
+   --max-width: 980px;
+ }
 
-    /* ===== Reset básico y layout ===== */
-    * { box-sizing: border-box; }
-    html,body{ height:100%; margin:0; padding:0; background:var(--bg); color:var(--text); font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-    main{ max-width:var(--max-width); margin:28px auto; padding:28px; background:white; border-radius:10px; box-shadow: 0 6px 18px rgba(29,32,37,0.06); }
-    header{ text-align:center; margin-bottom:22px; }
-    h1{ font-family: "Montserrat", sans-serif; color:var(--primary-dark); font-size:1.8rem; margin:0; }
-    h2{ font-family: "Montserrat", sans-serif; color:var(--pro-blue); margin-top:20px; margin-bottom:8px; font-size:1.15rem; }
-    p, li { color:var(--muted); font-size:1rem; line-height:1.5; margin:8px 0; }
-    ul{ padding-left:1.2rem; }
+ /* reset / base */
+ *,
+ *::before,
+ *::after {
+   box-sizing: border-box
+ }
 
-    /* Logo box */
-    .brand {
-      display:inline-flex;
-      align-items:center;
-      gap:12px;
-      padding:10px 14px;
-      border-radius:8px;
-      background:linear-gradient(180deg, rgba(0,107,189,0.07), rgba(0,49,101,0.04));
-      border:1px solid rgba(0,49,101,0.06);
-    }
-    .logo {
-      width:60px; height:60px; border-radius:8px;
-      display:flex; align-items:center; justify-content:center;
-      background: linear-gradient(140deg, var(--primary-dark), var(--deep-blue));
-      color:white; font-family: "Montserrat", sans-serif; font-weight:700;
-      box-shadow: 0 6px 12px rgba(0,49,101,0.12);
-    }
-    .logo small { font-size:0.7rem; opacity:0.9; }
+ html,
+ body {
+   height: 100%;
+   margin: 0;
+   background: var(--page-bg);
+   font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+   color: var(--muted);
+   line-height: 1.45
+ }
 
-    /* Grid-ish small helpers */
-    .row { display:flex; gap:18px; flex-wrap:wrap; align-items:flex-start; }
-    .col { flex:1 1 300px; min-width:260px; }
+ main {
+   max-width: var(--max-width);
+   margin: 28px auto;
+   padding: 28px;
+   background: var(--white);
+   border-radius: 10px;
+   box-shadow: 0 8px 24px rgba(29, 32, 37, 0.06)
+ }
 
-    /* Wireframe box (monospace look) */
-    .wireframe {
-      background: #0f1720; color: #dbe7f7; padding:14px; border-radius:8px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
-      font-size:0.9rem; white-space:pre-wrap; line-height:1.25;
-      border: 1px solid rgba(86,97,110,0.12);
-    }
+ header {
+   text-align: left;
+   margin-bottom: 26px;
+   display: flex;
+   gap: 16px;
+   align-items: center
+ }
 
-    /* Visual sample of color schema used in doc */
-    .swatches { display:flex; gap:10px; margin-top:10px; align-items:center; }
-    .swatch { width:96px; height:56px; border-radius:8px; display:flex; align-items:center; justify-content:center; color:white; font-weight:600; box-shadow:0 6px 10px rgba(13,18,25,0.06); font-family: "Montserrat", sans-serif;}
-    .s1{ background: var(--primary-dark); } .s2{ background: var(--tech-gray); } .s3{ background: var(--pro-blue); } .s4{ background: var(--deep-blue); }
+ .logo {
+   display: inline-flex;
+   align-items: center;
+   gap: 12px
+ }
 
-    /* Small accessibility note box */
-    .note { margin-top:10px; padding:12px; background:#f1f6fb; border-left:4px solid var(--pro-blue); color:var(--muted); border-radius:6px; }
+ .logo-box {
+   width: 64px;
+   height: 64px;
+   border-radius: 10px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: linear-gradient(140deg, var(--primary-dark), var(--deep-blue));
+   color: var(--white);
+   font-family: "Montserrat", sans-serif;
+   font-weight: 700;
+   box-shadow: 0 8px 16px rgba(0, 49, 101, 0.12)
+ }
 
-    footer { text-align:center; margin-top:22px; color:var(--muted); font-size:0.95rem; }
-    a { color:var(--pro-blue); text-decoration:none; }
-    /* small responsive */
-    @media (max-width:520px){
-      main{ padding:18px; margin:12px; }
-      .row{ flex-direction:column; }
-      .logo{ width:52px; height:52px; font-size:1rem; }
-    }
+ .brand-text {
+   font-family: "Montserrat", sans-serif;
+   color: var(--primary-dark);
+   font-weight: 700;
+   font-size: 1.15rem
+ }
+
+ h1 {
+   font-family: "Montserrat", sans-serif;
+   color: var(--deep-blue);
+   font-size: 1.6rem;
+   margin: 0
+ }
+
+ h2 {
+   font-family: "Montserrat", sans-serif;
+   color: var(--pro-blue);
+   margin-top: 22px;
+   margin-bottom: 8px;
+   font-size: 1.05rem
+ }
+
+ p,
+ li {
+   color: var(--muted);
+   font-size: 1rem;
+   margin: 8px 0
+ }
+
+ ul {
+   padding-left: 1.2rem
+ }
+
+ section {
+   margin-top: 14px
+ }
+
+ /* swatches */
+ .swatches {
+   display: flex;
+   gap: 10px;
+   margin-top: 10px
+ }
+
+ .swatch {
+   width: 110px;
+   height: 56px;
+   border-radius: 8px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: var(--white);
+   font-weight: 600;
+   font-family: "Montserrat", sans-serif;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06)
+ }
+
+ .s1 {
+   background: var(--primary-dark)
+ }
+
+ .s2 {
+   background: var(--tech-gray)
+ }
+
+ .s3 {
+   background: var(--pro-blue)
+ }
+
+ .s4 {
+   background: var(--deep-blue)
+ }
+
+ /* wireframe */
+ .wireframe {
+   background: #0b1220;
+   color: #dceaf8;
+   padding: 14px;
+   border-radius: 8px;
+   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+   font-size: 0.95rem;
+   white-space: pre-wrap;
+   border: 1px solid rgba(86, 97, 110, 0.10)
+ }
+
+ /* small note */
+ .note {
+   margin-top: 10px;
+   padding: 12px;
+   background: #f1f6fb;
+   border-left: 4px solid var(--pro-blue);
+   color: var(--muted);
+   border-radius: 6px
+ }
+
+ /* footer */
+ footer {
+   margin-top: 22px;
+   color: var(--muted);
+   font-size: 0.95rem;
+   text-align: center
+ }
+
+ /* responsive */
+ @media (max-width:560px) {
+   main {
+     padding: 18px;
+     margin: 12px
+   }
+
+   .logo-box {
+     width: 52px;
+     height: 52px
+   }
+ }

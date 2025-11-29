@@ -1,64 +1,63 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>AB7ec — Website Planning Document</title>
 
-  <!-- Tipografías (usar máximo 2-3 fuentes) -->
+  <!-- Google fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/styles.css">
+<link rel="stylesheet" href="styles/styles.css">
+<script src="../scripts/getdates.js" defer></script>
 </head>
 <body>
   <main>
     <header>
-      <div class="brand" aria-hidden="true">
-        <div class="logo" role="img" aria-label="AB7ec logo">AB7ec</div>
-        <div style="text-align:left;">
-          <div style="font-family: 'Montserrat', sans-serif; font-weight:600; color:var(--primary-dark);">AB7ec</div>
-          <small style="color:var(--muted);">Servicio profesional de reparación de computadoras — (el 7 representa la 't')</small>
+      <div class="logo" aria-hidden="true">
+        <div class="logo-box" role="img" aria-label="AB7ec logo">AB7ec</div>
+        <div>
+          <div class="brand-text">AB7ec</div>
+          <div style="color:var(--muted);font-size:0.9rem">Professional Computer Repair — (7 represents "t" → "ABTec")</div>
         </div>
       </div>
-      <p style="margin-top:12px; color:var(--muted);">Documento de planificación del sitio — entrega W05</p>
+      <div style="margin-left:auto;color:var(--muted);font-size:0.9rem">Site plan (W05) — place this file at <code>project/siteplan.html</code></div>
     </header>
 
     <!-- 1. Site Name -->
     <section>
       <h2>1. Site Name</h2>
-      <p><strong>AB7ec</strong> — (se pronuncia "ABTec"; el dígito <strong>7</strong> representa la letra <strong>t</strong>). El nombre es corto, memorable y comunica la naturaleza técnica del servicio.</p>
-      <p><strong>Optional domain:</strong> ab7ec.com (disponibilidad no verificada en esta entrega).</p>
+      <p><strong>AB7ec</strong> — pronounced "ABTec". The numeric character <strong>7</strong> visually represents a <strong>t</strong>, giving the brand a technical feel while keeping the name short and memorable.</p>
+      <p><strong>Suggested domain (optional):</strong> <code>ab7ec.com</code> (domain availability not verified here).</p>
     </section>
 
     <!-- 2. Site Purpose -->
     <section>
       <h2>2. Site Purpose</h2>
-      <p>El sitio proporcionará información y contacto para servicios de diagnóstico, reparación de hardware, mantenimiento preventivo, instalación/actualización de sistemas operativos, recuperación de datos y optimización del rendimiento. Además, incluirá una sección técnica interna con guías y tutoriales para técnicos.</p>
+      <p>The website provides clear information about computer repair and technical services: diagnostics, hardware repair, component upgrades, OS installation, data recovery, virus/malware removal, networking support, and maintenance plans. The site also includes a dedicated technician section with practical guides and reference materials.</p>
 
-      <div class="note">
-        <strong>Sección para técnicos:</strong> Área con guías prácticas (ej. diagnóstico de fallas, reemplazo de SSD, recuperación de datos, limpieza de sistemas, procedimientos de seguridad y checklist de verificación). Esta sección será de acceso público inicialmente, con opción de futuras páginas protegidas.
-      </div>
+      <div class="note"><strong>Technician section:</strong> A set of practical guides and checklists for technicians (e.g., POST failure diagnostics, SSD replacement procedures, secure data recovery steps, maintenance checklists). Initially public, with the option to gate advanced content later.</div>
     </section>
 
     <!-- 3. Scenarios -->
     <section>
       <h2>3. Scenarios</h2>
       <ul>
-        <li><strong>Cliente:</strong> "Mi laptop está muy lenta, ¿qué servicio necesito y cuánto costará?"</li>
-        <li><strong>Cliente:</strong> "¿Pueden recuperar archivos de un disco que no arranca?"</li>
-        <li><strong>Técnico:</strong> "¿Dónde encuentro la guía para reemplazar la unidad SSD en modelos comunes?"</li>
-        <li><strong>Cliente:</strong> "¿Cuál es el horario y cómo puedo agendar una cita?"</li>
+        <li><strong>Customer:</strong> "My laptop is very slow. What service should I request and what will it cost?"</li>
+        <li><strong>Customer:</strong> "I have a drive that won't boot. Can you recover my files?"</li>
+        <li><strong>Technician:</strong> "Where can I find the SSD replacement guide for common laptop models?"</li>
+        <li><strong>Customer:</strong> "What are your hours, and how do I book an appointment?"</li>
       </ul>
     </section>
 
     <!-- 4. Color Schema -->
     <section>
       <h2>4. Color Schema</h2>
-      <p>He definido cuatro colores principales para mantener coherencia visual en todo el sitio:</p>
+      <p>The color palette below will be used across the site for consistent branding and accessibility.</p>
       <ul>
-        <li><strong>Primario oscuro</strong> — <code>#1D2025</code> (Encabezados, hero background, y elementos de marca).</li>
-        <li><strong>Gris técnico</strong> — <code>#56616E</code> (Fondos secundarios, bordes, texto secundario).</li>
-        <li><strong>Azul profesional</strong> — <code>#006BBD</code> (Botones principales, enlaces, CTA).</li>
-        <li><strong>Azul profundo</strong> — <code>#003165</code> (Acentos secundarios, hover states, iconografía).</li>
+        <li><strong>Dark Steel</strong> — <code>#1D2025</code> (primary brand / headings / hero background)</li>
+        <li><strong>Slate Gray</strong> — <code>#56616E</code> (secondary text, card backgrounds, borders)</li>
+        <li><strong>Bright Tech Blue</strong> — <code>#006BBD</code> (primary CTAs, links, highlights)</li>
+        <li><strong>Deep Navy</strong> — <code>#003165</code> (brand accents, hover states)</li>
       </ul>
 
       <div class="swatches" aria-hidden="true">
@@ -68,132 +67,131 @@
         <div class="swatch s4">#003165</div>
       </div>
 
-      <p>Dónde se aplican:</p>
+      <p>Where to apply these colors:</p>
       <ul>
-        <li><strong>Encabezados / Logo:</strong> <code>#1D2025</code></li>
-        <li><strong>Fondo de tarjetas / bordes:</strong> <code>#56616E</code></li>
-        <li><strong>Botones / llamadas a la acción:</strong> <code>#006BBD</code></li>
-        <li><strong>Hover / links secundarios / detalles:</strong> <code>#003165</code></li>
+        <li><strong>Headings / Brand Logo:</strong> <code>#003165</code> or <code>#1D2025</code></li>
+        <li><strong>Primary Buttons / Links / CTA:</strong> <code>#006BBD</code></li>
+        <li><strong>Backgrounds for cards / secondary panels:</strong> <code>#ffffff</code> with accents of <code>#56616E</code></li>
+        <li><strong>Footer / deep accent areas:</strong> <code>#1D2025</code> or <code>#003165</code></li>
       </ul>
     </section>
 
     <!-- 5. Typography -->
     <section>
       <h2>5. Typography</h2>
-      <p>Fuentes seleccionadas (2):</p>
+      <p>Selected fonts (2):</p>
       <ul>
-        <li><strong>Montserrat</strong> — Usada para encabezados (h1, h2) y logotipo para transmitir solidez y legibilidad en títulos.</li>
-        <li><strong>Roboto</strong> — Usada para el cuerpo de texto, listas, formularios y contenido técnico por su legibilidad en pantalla.</li>
+        <li><strong>Montserrat</strong> — used for headings (H1, H2) and the logo to convey a strong, modern brand presence.</li>
+        <li><strong>Roboto</strong> — used for body text, lists, and longer content for excellent readability on screens.</li>
       </ul>
-      <p>Se aplican en este documento (ver encabezados y cuerpo) para cumplir el criterio de la rúbrica.</p>
+      <p>This document uses both fonts (see header and body), satisfying the typography use requirement.</p>
     </section>
 
-    <!-- 6. Wireframe Mobile -->
+    <!-- 6. Wireframe - Mobile -->
     <section>
-      <h2>6. Wireframe — Mobile (esquema)</h2>
-      <div class="wireframe" aria-label="Wireframe mobile">
-Home
-┌───────────────────────┐
-│  [LOGO]  AB7ec        │
-│  [nav toggle]         │
-├───────────────────────┤
-│  HERO IMAGE / CTA     │
-│  "Diagnóstico rápido" │
-├───────────────────────┤
-│  SERVICIOS (stacked)  │
-│  - Diagnóstico        │
-│  - Reparación hardware│
-│  - Recuperación datos │
-├───────────────────────┤
-│  SECCIÓN: Guías Técnicas (cards stacked)│
-├───────────────────────┤
-│  FORMULARIO / CONTACTO│
-├───────────────────────┤
-│  FOOTER (info, horarios)│
-└───────────────────────┘
+      <h2>6. Wireframe — Mobile</h2>
+      <div class="wireframe" aria-label="Mobile wireframe">
+Home (mobile)
+┌───────────────────────────────┐
+│ [Logo] AB7ec                  │
+│ [hamburger menu]              │
+├───────────────────────────────┤
+│ HERO (headline + CTA)         │
+├───────────────────────────────┤
+│ Services (stacked cards)      │
+│ - Diagnostics                 │
+│ - Repairs                     │
+│ - Data Recovery               │
+├───────────────────────────────┤
+│ Technician Guides (stacked)   │
+├───────────────────────────────┤
+│ Contact form                  │
+├───────────────────────────────┤
+│ Footer (hours, address, links)│
+└───────────────────────────────┘
       </div>
     </section>
 
-    <!-- 7. Wireframe Desktop -->
+    <!-- 7. Wireframe - Desktop -->
     <section>
-      <h2>7. Wireframe — Desktop (esquema)</h2>
-      <div class="wireframe" aria-label="Wireframe desktop">
-Desktop Home
-┌──────────────────────────────────────────────────────────────┐
-│ LOGO (left)        NAV (center)           CTA / CONTACT (right)│
-├──────────────────────────────────────────────────────────────┤
-│                       HERO (wide) / CTA                          │
-├──────────────────────────────────────────────────────────────┤
-│ SERVICES (3-column cards)                                      │
-│ [Diag]  [Repair]  [Recovery]                                   │
-├──────────────────────────────────────────────────────────────┤
-│ PRICING (two-column)     |   Guías Técnicas (list / link panel)│
-├──────────────────────────────────────────────────────────────┤
-│ CONTACT FORM (left)      |   TESTIMONIALS / INFO (right)       │
-├──────────────────────────────────────────────────────────────┤
-│ FOOTER: hours, address, small sitemap                          │
-└──────────────────────────────────────────────────────────────┘
+      <h2>7. Wireframe — Desktop</h2>
+      <div class="wireframe" aria-label="Desktop wireframe">
+Home (desktop)
+┌───────────────────────────────────────────────────────────────┐
+│ LOGO (left)    NAV (center)              CTA / Contact (right)│
+├───────────────────────────────────────────────────────────────┤
+│                       HERO (wide) / CTA                       │
+├───────────────────────────────────────────────────────────────┤
+│ SERVICES (3-column cards)                                     │
+│ [Diag]   [Repair]   [Recovery]                                │
+├───────────────────────────────────────────────────────────────┤
+│ PRICING (left column)   |  Technician Guides (right column)   │
+├───────────────────────────────────────────────────────────────┤
+│ CONTACT FORM (left)     |  Testimonials / Info (right)        │
+├───────────────────────────────────────────────────────────────┤
+│ FOOTER: address, hours, small sitemap                         │
+└───────────────────────────────────────────────────────────────┘
       </div>
     </section>
 
-    <!-- 8. Testing checklist -->
+    <!-- 8. File & Folder Naming Conventions -->
     <section>
-      <h2>8. Testing</h2>
-      <p>Auto-evaluación y herramientas a utilizar:</p>
+      <h2>8. File & Folder Naming Conventions</h2>
+      <p>Follow course naming rules and lower-case, hyphen-separated files/folders. Example structure for this project (place files exactly as shown):</p>
       <ul>
-        <li>HTML validator: <a href="https://validator.w3.org/nu" target="_blank" rel="noopener">W3C Nu Validator</a> — corregir errores reportados.</li>
-        <li>CSS validator: <a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener">W3C CSS Validator</a>.</li>
-        <li>Accesibilidad: Lighthouse / WAVE para revisar contrastes y etiquetas ARIA si es necesario.</li>
-        <li>Performance / SEO: Lighthouse y PageSpeed para recomendaciones (imágenes optimizadas, lazy-loading, meta tags).</li>
+        <li><code>wdd131/project/siteplan.html</code> ← this file</li>
+        <li><code>wdd131/project/styles/siteplan.css</code> ← optional separate CSS file (if you extract styles)</li>
+        <li><code>wdd131/project/images/</code> ← logo and sample images</li>
+        <li><code>wdd131/project/scripts/siteplan.js</code> ← optional JS for last-modified or interactivity</li>
       </ul>
-      <p>Notas rápidas:</p>
+      <p>Using these names ensures the submission follows the course naming conventions.</p>
+    </section>
+
+    <!-- 9. Testing -->
+    <section>
+      <h2>9. Testing / Validation</h2>
+      <p>Planned checks before submission:</p>
       <ul>
-        <li>Contraste: usar `#006BBD` sobre blanco para CTAs (suficiente), y `#003165` para hover states.</li>
-        <li>Imágenes: usar tamaños responsive y `loading="lazy"` en galerías o listas.</li>
+        <li>HTML validation: <a href="https://validator.w3.org/nu" target="_blank" rel="noopener">W3C Nu Validator</a> — ensure 0 errors.</li>
+        <li>CSS validation: <a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener">W3C CSS Validator</a> — ensure 0 errors.</li>
+        <li>Accessibility: Lighthouse or WAVE for contrast and ARIA checks.</li>
+        <li>Performance & SEO: Lighthouse for image optimization and meta tags.</li>
+      </ul>
+      <p>Notes: If moving inline CSS into a separate CSS file, validate that CSS file directly at the CSS validator link above.</p>
+    </section>
+
+    <!-- 10. Sitemap / Content Outline -->
+    <section>
+      <h2>10. Content Outline / Sitemap</h2>
+      <ul>
+        <li>Home — Hero, services, technician highlights, CTA</li>
+        <li>Services — separate pages for each major service</li>
+        <li>Technician Guides — categorized how-to articles</li>
+        <li>Pricing — sample prices and packages</li>
+        <li>Contact — form, map, hours</li>
+        <li>About — team, guarantees, certifications</li>
       </ul>
     </section>
 
-    <!-- 9. Content outline / Sitemap -->
+    <!-- 11. Technician Guides (sample list) -->
     <section>
-      <h2>9. Content Outline / Sitemap</h2>
+      <h2>11. Technician Guides (examples)</h2>
       <ul>
-        <li>Home — Hero, servicios, CTA</li>
-        <li>Servicios — páginas individuales por servicio (diagnóstico, hardware, software, recuperación)</li>
-        <li>Guías Técnicas — sección con artículos y guías por categoría (hardware, software, data recovery)</li>
-        <li>Precios — tarifas aproximadas y paquetes</li>
-        <li>Contacto — formulario, mapa, horario</li>
-        <li>Sobre Nosotros — información del equipo, garantías</li>
-      </ul>
-    </section>
-
-    <!-- 10. Extras -->
-    <section>
-      <h2>10. Técnicos — Guías sugeridas (ejemplos)</h2>
-      <ul>
-        <li>Guía: Diagnóstico rápido de POST/No boot</li>
-        <li>Guía: Cómo reemplazar SSD en laptops comunes (checklist)</li>
-        <li>Guía: Recuperación básica de archivos desde discos externos</li>
-        <li>Guía: Limpieza física segura (aspirado, pasta térmica, ventiladores)</li>
-        <li>Guía: Preparación de una imagen de sistema y restauración</li>
+        <li>Quick POST and no-boot diagnostics</li>
+        <li>SSD replacement checklist and steps</li>
+        <li>Data recovery initial triage workflow</li>
+        <li>Safe cleaning and thermal paste replacement</li>
+        <li>Creating and restoring system images</li>
       </ul>
     </section>
 
     <footer>
-      <p>Documento creado para la entrega W05 — AB7ec</p>
-      <p>Última modificación: <span id="lastModified">—</span></p>
+        <p>Document created for W05 — AB7ec Site Plan</p>
+        <p>&copy; <span id="currentyear"></span> - Saúl Abraham Arana Calderón - Guatemala</p>
+        <p id="lastModified"></p>
     </footer>
   </main>
 
-  <script>
-    // Mostrar la fecha de última modificación de forma segura
-    (function(){
-      const el = document.getElementById('lastModified');
-      if(el && document.lastModified){
-        el.textContent = document.lastModified;
-      } else if (el){
-        el.textContent = "No disponible";
-      }
-    })();
-  </script>
+
 </body>
 </html>
