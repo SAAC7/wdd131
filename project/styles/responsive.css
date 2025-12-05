@@ -1,0 +1,188 @@
+/* Responsive Design - Mobile First Approach */
+
+/* Tablets y dispositivos medianos */
+@media (max-width: 992px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .hero-image {
+        order: -1;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: var(--color-white);
+        flex-direction: column;
+        padding: var(--spacing-lg);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-normal);
+        z-index: 999;
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .menu-toggle[aria-expanded="true"] .hamburger {
+        background-color: transparent;
+    }
+    
+    .menu-toggle[aria-expanded="true"] .hamburger::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+    
+    .menu-toggle[aria-expanded="true"] .hamburger::after {
+        transform: rotate(-45deg);
+        bottom: 0;
+    }
+    
+    .services-grid,
+    .testimonials-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+/* Dispositivos móviles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-large {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .history-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .history-controls .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .service-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .service-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .nav-container {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    section {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .services-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-card,
+    .testimonial-card {
+        padding: var(--spacing-md);
+    }
+}
+
+/* Pantallas grandes */
+@media (min-width: 1200px) {
+    .container {
+        padding: 0;
+    }
+    
+    .nav-container {
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .hero {
+        padding: var(--spacing-xxl) 0;
+    }
+}
+
+/* Modo de alto contraste para accesibilidad */
+@media (prefers-contrast: high) {
+    :root {
+        --color-tech-blue: #004A8F;
+        --color-deep-navy: #002244;
+        --color-slate-gray: #333333;
+    }
+    
+    .btn-primary,
+    .nav-link.active,
+    .nav-link:hover,
+    .nav-link:focus {
+        outline: 3px solid var(--color-white);
+        outline-offset: 2px;
+    }
+}
+
+/* Modo de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .service-card:hover,
+    .btn-primary:hover,
+    .btn-secondary:hover {
+        transform: none;
+    }
+}
