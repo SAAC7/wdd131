@@ -7,7 +7,7 @@
     <meta name="description"
         content="AB7ec - Professional computer repair, diagnostics, data recovery, and specialized technical services.">
     <meta name="author" content="Saúl Abraham Arana Calderón">
-    <title>AB7ec - Professional Computer Repair</title>
+    <title>AB7ec - Services</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -54,17 +54,42 @@
     <!-- Main Content -->
     <main id="main-content">
 
-    </main>
+    <section class="section">
+        <div class="container">
+            <h1 class="section-title text-center">Our Services</h1>
+            <p class="section-description text-center">
+               Explore the services we offer and their prices. Select the ones you need to calculate your total.
+            </p>
+
+            <!-- Contenedor de precios dinámico -->
+            <div id="pricing-container" class="services-grid"></div>
+
+            <!-- Carrito y calculadora -->
+            <div class="cart-section" style="margin-top:2rem;">
+                <h2>Cart</h2>
+                <div id="cart-items" class="cart-items">
+                    <p>The cart is empty</p>
+                </div>
+
+                <div style="margin-top:1rem;">
+                    <button id="calculate-total" class="btn btn-primary">Calculate Total</button>
+                    <button id="reset-calculator" class="btn btn-secondary">Clear Cart</button>
+                </div>
+
+                <div id="calculation-result" style="margin-top:1rem;"></div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
-                    <div class="footer-logo">
-                        <span class="logo-text">AB7ec</span>
-                        <span class="logo-subtext">Professional Computer Repair</span>
-                    </div>
                     <p class="footer-description">
                         Professional computer repair since 2015. Specialists in diagnostics, repair, and data recovery. 
                     </p>

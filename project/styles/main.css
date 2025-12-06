@@ -392,7 +392,7 @@ section {
 }
 
 /* Lista de guías */
-.guides-list {
+.guides-list{
     display: grid;
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-xl);
@@ -527,8 +527,323 @@ section {
     color: var(--color-tech-blue);
 }
 
+
+
+/* ================================
+   ESTILO PARA TARJETAS DE GUÍAS
+===================================*/
+
+#guides-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Tarjeta */
+.guide-card {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 1px solid #e8e8e8;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.guide-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Header */
+.guide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.guide-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Dificultad */
+.guide-difficulty {
+    padding: 6px 12px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/* Categoría */
+.guide-category,
+.guide-time,
+.guide-tools,
+.guide-steps {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.guide-category strong,
+.guide-time strong,
+.guide-tools strong,
+.guide-steps strong {
+    color: #333;
+}
+
+/* Listas */
+.guide-steps ol,
+.guide-tools ul {
+    padding-left: 1.3rem;
+    margin-top: .4rem;
+}
+
+.guide-steps li,
+.guide-tools li {
+    margin-bottom: 0.4rem;
+}
+
+/* Botón Guardar */
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+}
+
+.btn-primary {
+    background: #007BFF;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0066d3;
+}
+
+/* Estado sin guías */
+.no-guides {
+    padding: 2rem;
+    text-align: center;
+    background: #fafafa;
+    border: 1px dashed #aaa;
+    border-radius: 12px;
+    color: #666;
+    font-size: 1rem;
+}
+
+/* ============================
+   FORMULARIO DE CONTACTO
+============================ */
+
+#contact-form {
+    max-width: 700px;
+    margin: 3rem auto;
+    background: var(--color-light-gray);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid #e3e3e3;
+}
+
+/* Título del formulario */
+#contact-form h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-deep-navy);
+}
+
+/* Grupo de campos */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Etiquetas */
+.form-group label {
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-deep-navy);
+}
+
+/* Inputs y textarea */
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 0.9rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-slate-gray);
+    font-size: 1rem;
+    font-family: var(--font-body);
+    outline: none;
+    transition: border var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+/* Focus */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--color-tech-blue);
+    box-shadow: 0 0 4px rgba(0, 107, 189, 0.4);
+}
+
+/* Textarea */
+.form-group textarea {
+    resize: vertical;
+    min-height: 160px;
+}
+
+/* Botón enviar */
+#contact-form .btn-submit {
+    width: 100%;
+    background-color: var(--color-tech-blue);
+    color: white;
+    padding: 1rem;
+    border-radius: var(--border-radius-lg);
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+#contact-form .btn-submit:hover {
+    background-color: var(--color-deep-navy);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Mensajes */
+.form-message {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-align: center;
+}
+
+.form-success {
+    background: var(--color-success);
+    color: white;
+}
+
+.form-error {
+    background: var(--color-danger);
+    color: white;
+}
+
+
+
+/* Hero About */
+.about-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+    padding: var(--spacing-xxl) var(--spacing-md);
+    background: linear-gradient(135deg, var(--color-light-gray) 0%, var(--color-white) 100%);
+}
+
+.about-hero .hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Mission & Vision Grid */
+.grid-two-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.grid-two-columns h3 {
+    color: var(--color-deep-navy);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Team Grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+    justify-items: center;
+}
+
+.team-member {
+    background: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: var(--spacing-sm);
+}
+
+.team-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-deep-navy);
+    margin-bottom: 0.3rem;
+}
+
+.team-role {
+    color: var(--color-slate-gray);
+    font-size: 0.9rem;
+}
+
+/* Stats Section */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-lg);
+    text-align: center;
+    margin-top: var(--spacing-lg);
+}
+
+.stat-item h3 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--color-tech-blue);
+    margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+    font-weight: 500;
+    color: var(--color-slate-gray);
+}
+
+
+
+
 /* Footer */
 .footer {
+    margin-top: var(--spacing-md);
     background-color: var(--color-dark-steel);
     color: var(--color-white);
     padding: var(--spacing-xl) 0 var(--spacing-md);

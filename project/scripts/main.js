@@ -15,46 +15,46 @@
 // })();
 
 // AB7ec - Main JavaScript File
-// Cumple con todos los requisitos del proyecto
+// Complies with all project requirements
 
-// === CONFIGURACIÓN INICIAL ===
+// === INITIAL CONFIGURATION ===
 document.addEventListener('DOMContentLoaded', () => {
     initializeApp();
 });
 
 function initializeApp() {
-    // 1. Configurar año actual en el footer
+    // 1. Set current year in footer
     setCurrentYear();
     
-    // 2. Inicializar menú móvil
+    // 2. Initialize mobile menu
     initMobileMenu();
     
-    // 3. Inicializar historial de servicios
+    // 3. Initialize service history
     initServiceHistory();
     
-    // 4. Inicializar formulario de contacto (si está en la página)
+    // 4. Initialize contact form (if on the page)
     if (document.getElementById('contact-form')) {
         initContactForm();
     }
     
-    // 5. Inicializar guías técnicas (si está en la página)
+    // 5. Initialize technical guides (if on the page)
     if (document.getElementById('guides-container')) {
         initTechnicalGuides();
     }
     
-    // 6. Inicializar sistema de precios (si está en la página)
+    // 6. Initialize pricing system (if on the page)
     if (document.getElementById('pricing-container')) {
         initPricingSystem();
     }
     
-    // 7. Configurar carga diferida de imágenes
+    // 7. Configure lazy loading of images
     initLazyLoading();
     
-    // 8. Mostrar notificación de carga completa
-    console.log('AB7ec - Sistema inicializado correctamente');
+    // 8. Show complete load notification
+    console.log('AB7ec - System initialized correctly');
 }
 
-// === FUNCIÓN 1: Configurar año actual ===
+// === FUNCTION 1: Set current year ===
 function setCurrentYear() {
     const yearElement = document.getElementById('currentyear');
     if (yearElement) {
@@ -63,24 +63,24 @@ function setCurrentYear() {
     }
 }
 
-// === FUNCIÓN 2: Menú móvil ===
+// === FUNCTION 2: Mobile menu ===
 function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.getElementById('nav-menu');
     
     if (!menuToggle || !navMenu) return;
     
-    // Función para alternar menú
+    // Function to toggle menu
     function toggleMenu() {
         const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
         menuToggle.setAttribute('aria-expanded', !isExpanded);
         navMenu.classList.toggle('active');
         
-        // Bloquear scroll cuando el menú está abierto
+        // Block scroll when menu is open
         document.body.style.overflow = isExpanded ? '' : 'hidden';
     }
     
-    // Función para cerrar menú
+    // Function to close menu
     function closeMenu() {
         menuToggle.setAttribute('aria-expanded', 'false');
         navMenu.classList.remove('active');
@@ -90,20 +90,20 @@ function initMobileMenu() {
     // Event listeners
     menuToggle.addEventListener('click', toggleMenu);
     
-    // Cerrar menú al hacer clic en enlaces
+    // Close menu when clicking links
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
         link.addEventListener('click', closeMenu);
     });
     
-    // Cerrar menú al hacer clic fuera
+    // Close menu when clicking outside
     document.addEventListener('click', (event) => {
         if (!menuToggle.contains(event.target) && !navMenu.contains(event.target)) {
             closeMenu();
         }
     });
     
-    // Cerrar menú con tecla Escape
+    // Close menu with Escape key
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') {
             closeMenu();
@@ -111,12 +111,12 @@ function initMobileMenu() {
     });
 }
 
-// === FUNCIÓN 3: Historial de servicios (localStorage) ===
+// === FUNCTION 3: Service history (localStorage) ===
 function initServiceHistory() {
     const historyContainer = document.getElementById('service-history-container');
     if (!historyContainer) return;
     
-    // Array de servicios de ejemplo
+    // Sample services array
     const sampleServices = [
         {
             id: 1,
@@ -141,38 +141,38 @@ function initServiceHistory() {
         }
     ];
     
-    // Obtener servicios de localStorage o usar los de ejemplo
+    // Get services from localStorage or use sample
     let services = JSON.parse(localStorage.getItem('ab7ec_services')) || sampleServices;
     
-    // Guardar servicios iniciales si no existen
+    // Save initial services if they don't exist
     if (!localStorage.getItem('ab7ec_services')) {
         localStorage.setItem('ab7ec_services', JSON.stringify(services));
     }
     
-    // Renderizar servicios
+    // Render services
     renderServices(services);
     
-    // Configurar botones
+    // Configure buttons
     setupServiceButtons();
     
-    // Actualizar estadísticas
+    // Update statistics
     updateServiceStats(services);
 }
 
-// Función para renderizar servicios usando template literals
+// Function to render services using template literals
 function renderServices(services) {
     const historyContainer = document.getElementById('service-history-container');
     
     if (!services || services.length === 0) {
         historyContainer.innerHTML = `
             <div class="no-services">
-                <p>No hay servicios registrados. Agregue un nuevo servicio para comenzar.</p>
+                <p>No services registered. Add a new service to begin.</p>
             </div>
         `;
         return;
     }
     
-    // Usar template literal exclusivamente para construir el HTML
+    // Use template literal exclusively to build HTML
     const servicesHTML = services.map(service => {
         const statusText = service.status === 'completed' ? 'Completed' : 'Pending';
         const statusClass = service.status === 'completed' ? 'completed' : 'pending';
@@ -199,7 +199,7 @@ function renderServices(services) {
     
     historyContainer.innerHTML = servicesHTML;
     
-    // Agregar event listeners a los botones dinámicos
+    // Add event listeners to dynamic buttons
     document.querySelectorAll('.toggle-status').forEach(button => {
         button.addEventListener('click', handleToggleStatus);
     });
@@ -209,40 +209,40 @@ function renderServices(services) {
     });
 }
 
-// Función para configurar botones del historial
+// Function to configure history buttons
 function setupServiceButtons() {
-    // Botón para agregar servicio
+    // Button to add service
     const addButton = document.getElementById('add-service-btn');
     if (addButton) {
         addButton.addEventListener('click', handleAddService);
     }
     
-    // Botón para limpiar historial
+    // Button to clear history
     const clearButton = document.getElementById('clear-history-btn');
     if (clearButton) {
         clearButton.addEventListener('click', handleClearHistory);
     }
     
-    // Botón para filtrar pendientes
+    // Button to filter pending
     const filterButton = document.getElementById('filter-pending-btn');
     if (filterButton) {
         filterButton.addEventListener('click', handleFilterPending);
     }
     
-    // Botón para mostrar todos
+    // Button to show all
     const showAllButton = document.getElementById('show-all-btn');
     if (showAllButton) {
         showAllButton.addEventListener('click', handleShowAll);
     }
 }
 
-// Función para agregar servicio
+// Function to add service
 function handleAddService() {
     const services = JSON.parse(localStorage.getItem('ab7ec_services')) || [];
     
-    // Crear nuevo servicio
+    // Create new service
     const newService = {
-        id: Date.now(), // ID único basado en timestamp
+        id: Date.now(), // Unique ID based on timestamp
         name: `Simulated Service ${services.length + 1}`,
         date: new Date().toISOString().split('T')[0],
         status: 'pending',
@@ -252,20 +252,20 @@ function handleAddService() {
     services.push(newService);
     localStorage.setItem('ab7ec_services', JSON.stringify(services));
     
-    // Renderizar y actualizar
+    // Render and update
     renderServices(services);
     updateServiceStats(services);
     
-    // Mostrar notificación
+    // Show notification
     showNotification('Service added successfully', 'success');
 }
 
-// Función para cambiar estado de servicio
+// Function to change service status
 function handleToggleStatus(event) {
     const serviceId = parseInt(event.target.dataset.id);
     let services = JSON.parse(localStorage.getItem('ab7ec_services'));
     
-    // Usar map para actualizar el array
+    // Use map to update array
     services = services.map(service => {
         if (service.id === serviceId) {
             return {
@@ -283,12 +283,12 @@ function handleToggleStatus(event) {
     showNotification('Updated service status', 'info');
 }
 
-// Función para eliminar servicio
+// Function to delete service
 function handleDeleteService(event) {
     const serviceId = parseInt(event.target.dataset.id);
     let services = JSON.parse(localStorage.getItem('ab7ec_services'));
     
-    // Usar filter para crear nuevo array sin el servicio eliminado
+    // Use filter to create new array without deleted service
     services = services.filter(service => service.id !== serviceId);
     
     localStorage.setItem('ab7ec_services', JSON.stringify(services));
@@ -298,9 +298,9 @@ function handleDeleteService(event) {
     showNotification('Service removed', 'warning');
 }
 
-// Función para limpiar historial
+// Function to clear history
 function handleClearHistory() {
-    // Usar confirmación antes de borrar
+    // Use confirmation before deleting
     if (confirm('Are you sure you want to delete all service history?')) {
         localStorage.removeItem('ab7ec_services');
         renderServices([]);
@@ -309,26 +309,26 @@ function handleClearHistory() {
     }
 }
 
-// Función para filtrar servicios pendientes
+// Function to filter pending services
 function handleFilterPending() {
     const allServices = JSON.parse(localStorage.getItem('ab7ec_services')) || [];
     const pendingServices = allServices.filter(service => service.status === 'pending');
     renderServices(pendingServices);
 }
 
-// Función para mostrar todos los servicios
+// Function to show all services
 function handleShowAll() {
     const services = JSON.parse(localStorage.getItem('ab7ec_services')) || [];
     renderServices(services);
 }
 
-// Función para actualizar estadísticas
+// Function to update statistics
 function updateServiceStats(services) {
     const total = services.length;
     const completed = services.filter(s => s.status === 'completed').length;
     const pending = services.filter(s => s.status === 'pending').length;
     
-    // Actualizar elementos del DOM
+    // Update DOM elements
     const totalElement = document.getElementById('total-services');
     const completedElement = document.getElementById('completed-services');
     const pendingElement = document.getElementById('pending-services');
@@ -338,32 +338,32 @@ function updateServiceStats(services) {
     if (pendingElement) pendingElement.textContent = pending;
 }
 
-// === FUNCIÓN 4: Formulario de contacto ===
+// === FUNCTION 4: Contact form ===
 function initContactForm() {
     const contactForm = document.getElementById('contact-form');
     if (!contactForm) return;
     
-    // Cargar datos guardados
+    // Load saved data
     loadFormData();
     
-    // Configurar validación en tiempo real
+    // Configure real-time validation
     const inputs = contactForm.querySelectorAll('input, textarea, select');
     inputs.forEach(input => {
         input.addEventListener('blur', validateField);
         input.addEventListener('input', () => {
-            // Limpiar mensaje de error al escribir
+            // Clear error message when typing
             clearFieldError(input);
         });
     });
     
-    // Manejar envío del formulario
+    // Handle form submission
     contactForm.addEventListener('submit', handleFormSubmit);
     
-    // Guardar datos automáticamente
+    // Save data automatically
     contactForm.addEventListener('input', debounce(saveFormData, 500));
 }
 
-// Función para manejar envío del formulario
+// Function to handle form submission
 function handleFormSubmit(event) {
     event.preventDefault();
     
@@ -371,20 +371,20 @@ function handleFormSubmit(event) {
     const formData = new FormData(form);
     const formObject = Object.fromEntries(formData.entries());
     
-    // Validar formulario completo
+    // Validate complete form
     if (!validateForm(form)) {
         showNotification('Please fill in all required fields correctly.', 'error');
         return;
     }
     
-    // Simular envío (en un caso real sería una petición fetch)
+    // Simulate submission (in real case would be a fetch request)
     showNotification('Message sent successfully. We will contact you shortly.', 'success');
     
-    // Limpiar formulario y localStorage
+    // Clear form and localStorage
     form.reset();
     localStorage.removeItem('ab7ec_contact_form');
     
-    // Crear registro de contacto
+    // Create contact record
     const contacts = JSON.parse(localStorage.getItem('ab7ec_contacts')) || [];
     contacts.push({
         ...formObject,
@@ -393,22 +393,22 @@ function handleFormSubmit(event) {
     
     localStorage.setItem('ab7ec_contacts', JSON.stringify(contacts));
     
-    // Mostrar confirmación
+    // Show confirmation
     setTimeout(() => {
         alert('Thank you for your message. We have received your request and will contact you within 24 hours.');
     }, 100);
 }
 
-// Función para validar campo individual
+// Function to validate individual field
 function validateField(event) {
     const field = event.target;
     const value = field.value.trim();
     const fieldName = field.name;
     
-    // Limpiar error previo
+    // Clear previous error
     clearFieldError(field);
     
-    // Validaciones específicas por campo
+    // Specific validations by field
     let isValid = true;
     let errorMessage = '';
     
@@ -444,13 +444,13 @@ function validateField(event) {
             break;
     }
     
-    // Marcar campo requerido
+    // Mark required field
     if (field.required && !value) {
         isValid = false;
         errorMessage = 'This field is required';
     }
     
-    // Mostrar error si es necesario
+    // Show error if necessary
     if (!isValid) {
         showFieldError(field, errorMessage);
     }
@@ -458,17 +458,17 @@ function validateField(event) {
     return isValid;
 }
 
-// Función para validar formulario completo
+// Function to validate complete form
 function validateForm(form) {
     const fields = form.querySelectorAll('input, textarea, select');
     let isValid = true;
     
     fields.forEach(field => {
-        // Crear evento de blur para validar
+        // Create blur event to validate
         const event = new Event('blur');
         field.dispatchEvent(event);
         
-        // Verificar si el campo tiene error
+        // Check if field has error
         if (field.parentElement.querySelector('.field-error')) {
             isValid = false;
         }
@@ -477,7 +477,7 @@ function validateForm(form) {
     return isValid;
 }
 
-// Funciones auxiliares para manejo de errores
+// Helper functions for error handling
 function showFieldError(field, message) {
     const errorElement = document.createElement('div');
     errorElement.className = 'field-error';
@@ -498,7 +498,7 @@ function clearFieldError(field) {
     field.style.borderColor = '';
 }
 
-// Función para guardar datos del formulario
+// Function to save form data
 function saveFormData() {
     const form = document.getElementById('contact-form');
     if (!form) return;
@@ -513,7 +513,7 @@ function saveFormData() {
     localStorage.setItem('ab7ec_contact_form', JSON.stringify(data));
 }
 
-// Función para cargar datos guardados
+// Function to load saved data
 function loadFormData() {
     const savedData = localStorage.getItem('ab7ec_contact_form');
     if (!savedData) return;
@@ -529,82 +529,82 @@ function loadFormData() {
     });
 }
 
-// === FUNCIÓN 5: Guías técnicas ===
+// === FUNCTION 5: Technical guides ===
 function initTechnicalGuides() {
-    // Array de objetos para guías técnicas
+    // Array of objects for technical guides
     const technicalGuides = [
         {
             id: 1,
-            title: 'Diagnóstico de Fallos POST',
-            category: 'diagnostico',
-            difficulty: 'intermedio',
+            title: 'POST Failure Diagnosis',
+            category: 'diagnosis',
+            difficulty: 'intermediate',
             steps: [
-                'Escuchar códigos de sonido POST',
-                'Verificar códigos de error en pantalla',
-                'Probar componentes individualmente',
-                'Usar tarjeta de diagnóstico POST'
+                'Listen to POST beep codes',
+                'Check error codes on screen',
+                'Test individual components',
+                'Use POST diagnostic card'
             ],
-            tools: ['Multímetro', 'Tarjeta POST', 'Fuente de poder de prueba'],
-            estimatedTime: '30-60 minutos'
+            tools: ['Multimeter', 'POST card', 'Power supply tester'],
+            estimatedTime: '30-60 minutes'
         },
         {
             id: 2,
-            title: 'Reemplazo de SSD',
+            title: 'SSD Replacement',
             category: 'hardware',
-            difficulty: 'principiante',
+            difficulty: 'beginner',
             steps: [
-                'Realizar backup de datos',
-                'Desconectar alimentación y batería',
-                'Remover cubierta posterior',
-                'Reemplazar unidad y asegurar',
-                'Instalar sistema operativo'
+                'Perform data backup',
+                'Disconnect power and battery',
+                'Remove back cover',
+                'Replace and secure unit',
+                'Install operating system'
             ],
-            tools: ['Destornillador Phillips', 'Pulsera antiestática', 'Clonador de discos'],
-            estimatedTime: '45-90 minutos'
+            tools: ['Phillips screwdriver', 'Anti-static wrist strap', 'Disk cloner'],
+            estimatedTime: '45-90 minutes'
         },
         {
             id: 3,
-            title: 'Recuperación Segura de Datos',
+            title: 'Secure Data Recovery',
             category: 'software',
-            difficulty: 'avanzado',
+            difficulty: 'advanced',
             steps: [
-                'Conectar unidad como secundaria',
-                'Usar software de recuperación',
-                'Escanear en modo de solo lectura',
-                'Guardar datos en unidad segura'
+                'Connect drive as secondary',
+                'Use recovery software',
+                'Scan in read-only mode',
+                'Save data to secure drive'
             ],
-            tools: ['Adaptador SATA/USB', 'Software de recuperación', 'Disco duro externo'],
-            estimatedTime: '2-4 horas'
+            tools: ['SATA/USB adapter', 'Recovery software', 'External hard drive'],
+            estimatedTime: '2-4 hours'
         },
         {
             id: 4,
-            title: 'Limpieza y Mantenimiento',
-            category: 'mantenimiento',
-            difficulty: 'principiante',
+            title: 'Cleaning and Maintenance',
+            category: 'maintenance',
+            difficulty: 'beginner',
             steps: [
-                'Desmontar cubiertas',
-                'Limpiar ventiladores y heatsinks',
-                'Aplicar pasta térmica nueva',
-                'Reensamblar y probar'
+                'Disassemble covers',
+                'Clean fans and heatsinks',
+                'Apply new thermal paste',
+                'Reassemble and test'
             ],
-            tools: ['Aire comprimido', 'Pasta térmica', 'Alcohol isopropílico'],
-            estimatedTime: '60 minutos'
+            tools: ['Compressed air', 'Thermal paste', 'Isopropyl alcohol'],
+            estimatedTime: '60 minutes'
         }
     ];
     
-    // Guardar en localStorage si no existe
+    // Save to localStorage if it doesn't exist
     if (!localStorage.getItem('ab7ec_guides')) {
         localStorage.setItem('ab7ec_guides', JSON.stringify(technicalGuides));
     }
     
-    // Renderizar guías
+    // Render guides
     renderGuides(technicalGuides);
     
-    // Configurar filtros
+    // Configure filters
     setupGuideFilters();
 }
 
-// Función para renderizar guías usando template literals
+// Function to render guides using template literals
 function renderGuides(guides) {
     const container = document.getElementById('guides-container');
     if (!container) return;
@@ -612,19 +612,19 @@ function renderGuides(guides) {
     if (!guides || guides.length === 0) {
         container.innerHTML = `
             <div class="no-guides">
-                <p>No hay guías disponibles en este momento.</p>
+                <p>No guides available at this time.</p>
             </div>
         `;
         return;
     }
     
-    // Usar template literal exclusivamente
+    // Use template literal exclusively
     const guidesHTML = guides.map(guide => {
-        // Determinar color basado en dificultad usando condicional
+        // Determine color based on difficulty using conditional
         let difficultyColor;
-        if (guide.difficulty === 'principiante') {
+        if (guide.difficulty === 'beginner') {
             difficultyColor = '#28A745';
-        } else if (guide.difficulty === 'intermedio') {
+        } else if (guide.difficulty === 'intermediate') {
             difficultyColor = '#FFC107';
         } else {
             difficultyColor = '#DC3545';
@@ -640,29 +640,29 @@ function renderGuides(guides) {
                 </div>
                 
                 <div class="guide-category">
-                    <strong>Categoría:</strong> ${getCategoryName(guide.category)}
+                    <strong>Category:</strong> ${getCategoryName(guide.category)}
                 </div>
                 
                 <div class="guide-time">
-                    <strong>Tiempo estimado:</strong> ${guide.estimatedTime}
+                    <strong>Estimated time:</strong> ${guide.estimatedTime}
                 </div>
                 
                 <div class="guide-steps">
-                    <strong>Pasos:</strong>
+                    <strong>Steps:</strong>
                     <ol>
                         ${guide.steps.map(step => `<li>${step}</li>`).join('')}
                     </ol>
                 </div>
                 
                 <div class="guide-tools">
-                    <strong>Herramientas requeridas:</strong>
+                    <strong>Required tools:</strong>
                     <ul>
                         ${guide.tools.map(tool => `<li>${tool}</li>`).join('')}
                     </ul>
                 </div>
                 
                 <button class="btn btn-primary save-guide" data-id="${guide.id}">
-                    Guardar para más tarde
+                    Save for later
                 </button>
             </article>
         `;
@@ -670,13 +670,13 @@ function renderGuides(guides) {
     
     container.innerHTML = guidesHTML;
     
-    // Agregar event listeners a botones de guardar
+    // Add event listeners to save buttons
     document.querySelectorAll('.save-guide').forEach(button => {
         button.addEventListener('click', handleSaveGuide);
     });
 }
 
-// Función para configurar filtros de guías
+// Function to configure guide filters
 function setupGuideFilters() {
     const categoryFilter = document.getElementById('category-filter');
     const difficultyFilter = document.getElementById('difficulty-filter');
@@ -690,7 +690,7 @@ function setupGuideFilters() {
     }
 }
 
-// Función para filtrar guías
+// Function to filter guides
 function filterGuides() {
     const categoryFilter = document.getElementById('category-filter');
     const difficultyFilter = document.getElementById('difficulty-filter');
@@ -700,7 +700,7 @@ function filterGuides() {
     
     const allGuides = JSON.parse(localStorage.getItem('ab7ec_guides')) || [];
     
-    // Usar filter para aplicar múltiples criterios
+    // Use filter to apply multiple criteria
     const filteredGuides = allGuides.filter(guide => {
         const categoryMatch = selectedCategory === 'all' || guide.category === selectedCategory;
         const difficultyMatch = selectedDifficulty === 'all' || guide.difficulty === selectedDifficulty;
@@ -711,7 +711,7 @@ function filterGuides() {
     renderGuides(filteredGuides);
 }
 
-// Función para manejar guardado de guía
+// Function to handle guide saving
 function handleSaveGuide(event) {
     const guideId = parseInt(event.target.dataset.id);
     const guides = JSON.parse(localStorage.getItem('ab7ec_guides')) || [];
@@ -719,49 +719,49 @@ function handleSaveGuide(event) {
     
     if (!guide) return;
     
-    // Obtener guías guardadas
+    // Get saved guides
     let savedGuides = JSON.parse(localStorage.getItem('ab7ec_saved_guides')) || [];
     
-    // Verificar si ya está guardada
+    // Check if already saved
     if (!savedGuides.some(g => g.id === guideId)) {
         savedGuides.push(guide);
         localStorage.setItem('ab7ec_saved_guides', JSON.stringify(savedGuides));
-        showNotification('Guía guardada correctamente', 'success');
-        event.target.textContent = '✓ Guardada';
+        showNotification('Guide saved successfully', 'success');
+        event.target.textContent = '✓ Saved';
         event.target.disabled = true;
     } else {
-        showNotification('Esta guía ya está guardada', 'info');
+        showNotification('This guide is already saved', 'info');
     }
 }
 
-// === FUNCIÓN 6: Sistema de precios ===
+// === FUNCTION 6: Pricing system ===
 function initPricingSystem() {
-    // Array de objetos para servicios y precios
+    // Array of objects for services and prices
     const pricingData = [
-        { id: 1, service: 'Diagnóstico básico', price: 250, duration: '30 min', category: 'diagnostico' },
-        { id: 2, service: 'Diagnóstico avanzado', price: 500, duration: '2 hora', category: 'diagnostico' },
-        { id: 3, service: 'Limpieza interna', price: 400, duration: '2 hora', category: 'mantenimiento' },
-        { id: 4, service: 'Cambio de pasta térmica', price: 350, duration: '45 min', category: 'mantenimiento' },
-        { id: 5, service: 'Reemplazo de pantalla', price: 1200, duration: '1-2 horas', category: 'reparacion' },
-        { id: 6, service: 'Reemplazo de teclado', price: 600, duration: '1 hora', category: 'reparacion' },
-        { id: 7, service: 'Instalación de SO', price: 300, duration: '1 hora', category: 'software' },
-        { id: 8, service: 'Recuperación de datos básica', price: 800, duration: '2-4 horas', category: 'recuperacion' },
-        { id: 9, service: 'Recuperación de datos avanzada', price: 1500, duration: '4-8 horas', category: 'recuperacion' }
+        { id: 1, service: 'Basic diagnosis', price: 250, duration: '30 min', category: 'diagnosis' },
+        { id: 2, service: 'Advanced diagnosis', price: 500, duration: '2 hours', category: 'diagnosis' },
+        { id: 3, service: 'Internal cleaning', price: 400, duration: '2 hours', category: 'maintenance' },
+        { id: 4, service: 'Thermal paste replacement', price: 350, duration: '45 min', category: 'maintenance' },
+        { id: 5, service: 'Screen replacement', price: 1200, duration: '1-2 hours', category: 'repair' },
+        { id: 6, service: 'Keyboard replacement', price: 600, duration: '1 hour', category: 'repair' },
+        { id: 7, service: 'OS installation', price: 300, duration: '1 hour', category: 'software' },
+        { id: 8, service: 'Basic data recovery', price: 800, duration: '2-4 hours', category: 'recovery' },
+        { id: 9, service: 'Advanced data recovery', price: 1500, duration: '4-8 hours', category: 'recovery' }
     ];
     
-    // Renderizar precios
+    // Render prices
     renderPricing(pricingData);
     
-    // Configurar calculadora
+    // Configure calculator
     setupPriceCalculator(pricingData);
 }
 
-// Función para renderizar precios usando template literals
+// Function to render prices using template literals
 function renderPricing(pricingData) {
     const container = document.getElementById('pricing-container');
     if (!container) return;
     
-    // Agrupar por categoría usando reduce
+    // Group by category using reduce
     const groupedByCategory = pricingData.reduce((groups, item) => {
         const category = item.category;
         if (!groups[category]) {
@@ -771,7 +771,7 @@ function renderPricing(pricingData) {
         return groups;
     }, {});
     
-    // Crear HTML con template literals
+    // Create HTML with template literals
     let pricingHTML = '';
     
     for (const [category, items] of Object.entries(groupedByCategory)) {
@@ -787,7 +787,7 @@ function renderPricing(pricingData) {
                                 <span class="pricing-duration">${item.duration}</span>
                             </div>
                             <button class="btn btn-sm btn-primary add-to-cart" data-id="${item.id}">
-                                Agregar
+                                Add
                             </button>
                         </div>
                     `).join('')}
@@ -798,13 +798,13 @@ function renderPricing(pricingData) {
     
     container.innerHTML = pricingHTML;
     
-    // Agregar event listeners
+    // Add event listeners
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', handleAddToCart);
     });
 }
 
-// Función para configurar calculadora de precios
+// Function to configure price calculator
 function setupPriceCalculator(pricingData) {
     const calculateButton = document.getElementById('calculate-total');
     const resetButton = document.getElementById('reset-calculator');
@@ -817,17 +817,17 @@ function setupPriceCalculator(pricingData) {
         resetButton.addEventListener('click', resetCalculator);
     }
     
-    // Inicializar carrito
+    // Initialize cart
     let cart = JSON.parse(localStorage.getItem('ab7ec_cart')) || [];
     updateCartDisplay(cart, pricingData);
 }
 
-// Función para agregar al carrito
+// Function to add to cart
 function handleAddToCart(event) {
     const serviceId = parseInt(event.target.dataset.id);
     const cart = JSON.parse(localStorage.getItem('ab7ec_cart')) || [];
     
-    // Verificar si ya está en el carrito
+    // Check if already in cart
     const existingItem = cart.find(item => item.id === serviceId);
     
     if (existingItem) {
@@ -841,45 +841,45 @@ function handleAddToCart(event) {
     
     localStorage.setItem('ab7ec_cart', JSON.stringify(cart));
     
-    // Obtener datos de precios para actualizar display
+    // Get pricing data to update display
     const pricingData = JSON.parse(localStorage.getItem('ab7ec_pricing')) || [];
     updateCartDisplay(cart, pricingData);
     
-    showNotification('Servicio agregado al carrito', 'success');
+    showNotification('Service added to cart', 'success');
 }
 
-// Función para calcular total
+// Function to calculate total
 function calculateTotal(pricingData) {
     const cart = JSON.parse(localStorage.getItem('ab7ec_cart')) || [];
     
     if (cart.length === 0) {
-        showNotification('El carrito está vacío', 'warning');
+        showNotification('The cart is empty', 'warning');
         return;
     }
     
-    // Calcular total usando reduce
+    // Calculate total using reduce
     const total = cart.reduce((sum, cartItem) => {
         const service = pricingData.find(p => p.id === cartItem.id);
         return sum + (service ? service.price * cartItem.quantity : 0);
     }, 0);
     
-    // Mostrar resultado
+    // Show result
     const resultElement = document.getElementById('calculation-result');
     if (resultElement) {
         resultElement.innerHTML = `
             <div class="calculation-result">
-                <h4>Total estimado:</h4>
+                <h4>Estimated total:</h4>
                 <p class="total-amount">Q${total.toFixed(2)}</p>
-                <p>Para ${cart.length} servicio(s) seleccionado(s)</p>
-                <p class="note">Nota: Los precios pueden variar según la complejidad específica del caso.</p>
+                <p>For ${cart.length} selected service(s)</p>
+                <p class="note">Note: Prices may vary depending on the specific case complexity.</p>
             </div>
         `;
     }
 }
 
-// Función para resetear calculadora
+// Function to reset calculator
 function resetCalculator() {
-    if (confirm('¿Está seguro de que desea vaciar el carrito?')) {
+    if (confirm('Are you sure you want to empty the cart?')) {
         localStorage.removeItem('ab7ec_cart');
         updateCartDisplay([], []);
         
@@ -888,11 +888,11 @@ function resetCalculator() {
             resultElement.innerHTML = '';
         }
         
-        showNotification('Carrito vaciado', 'warning');
+        showNotification('Cart emptied', 'warning');
     }
 }
 
-// Función para actualizar display del carrito
+// Function to update cart display
 function updateCartDisplay(cart, pricingData) {
     const cartCount = document.getElementById('cart-count');
     const cartItems = document.getElementById('cart-items');
@@ -904,7 +904,7 @@ function updateCartDisplay(cart, pricingData) {
     
     if (cartItems) {
         if (cart.length === 0) {
-            cartItems.innerHTML = '<p>El carrito está vacío</p>';
+            cartItems.innerHTML = '<p>The cart is empty</p>';
             return;
         }
         
@@ -918,7 +918,7 @@ function updateCartDisplay(cart, pricingData) {
                 <div class="cart-item">
                     <div class="cart-item-info">
                         <strong>${service.service}</strong>
-                        <div>Cantidad: ${cartItem.quantity}</div>
+                        <div>Quantity: ${cartItem.quantity}</div>
                     </div>
                     <div class="cart-item-price">
                         Q${subtotal.toFixed(2)}
@@ -931,12 +931,12 @@ function updateCartDisplay(cart, pricingData) {
     }
 }
 
-// === FUNCIÓN 7: Lazy Loading ===
+// === FUNCTION 7: Lazy Loading ===
 function initLazyLoading() {
-    // Seleccionar todas las imágenes con data-src
+    // Select all images with data-src
     const lazyImages = document.querySelectorAll('img[loading="lazy"]');
     
-    // Configurar Intersection Observer para lazy loading
+    // Configure Intersection Observer for lazy loading
     if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -944,7 +944,7 @@ function initLazyLoading() {
                     const img = entry.target;
                     img.src = img.dataset.src || img.src;
                     
-                    // Agregar clase de transición cuando se carga
+                    // Add transition class when loaded
                     img.addEventListener('load', () => {
                         img.classList.add('loaded');
                     });
@@ -959,23 +959,23 @@ function initLazyLoading() {
         
         lazyImages.forEach(img => imageObserver.observe(img));
     } else {
-        // Fallback para navegadores antiguos
+        // Fallback for old browsers
         lazyImages.forEach(img => {
             img.src = img.dataset.src || img.src;
         });
     }
 }
 
-// === FUNCIONES AUXILIARES ===
+// === HELPER FUNCTIONS ===
 
-// Función para mostrar notificaciones
+// Function to show notifications
 function showNotification(message, type = 'info') {
-    // Crear elemento de notificación
+    // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     notification.textContent = message;
     
-    // Estilos
+    // Styles
     notification.style.position = 'fixed';
     notification.style.top = '20px';
     notification.style.right = '20px';
@@ -985,7 +985,7 @@ function showNotification(message, type = 'info') {
     notification.style.zIndex = '9999';
     notification.style.transition = 'opacity 0.3s ease';
     
-    // Colores según tipo
+    // Colors according to type
     const colors = {
         success: { bg: '#28A745', text: '#FFFFFF' },
         error: { bg: '#DC3545', text: '#FFFFFF' },
@@ -997,10 +997,10 @@ function showNotification(message, type = 'info') {
     notification.style.backgroundColor = color.bg;
     notification.style.color = color.text;
     
-    // Agregar al DOM
+    // Add to DOM
     document.body.appendChild(notification);
     
-    // Remover después de 3 segundos
+    // Remove after 3 seconds
     setTimeout(() => {
         notification.style.opacity = '0';
         setTimeout(() => {
@@ -1011,27 +1011,27 @@ function showNotification(message, type = 'info') {
     }, 3000);
 }
 
-// Función para formatear fechas
+// Function to format dates
 function formatDate(dateString) {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString('es-GT', options);
+    return new Date(dateString).toLocaleDateString('en-US', options);
 }
 
-// Función para obtener nombre de categoría
+// Function to get category name
 function getCategoryName(category) {
     const categories = {
-        'diagnostico': 'Diagnóstico',
+        'diagnosis': 'Diagnosis',
         'hardware': 'Hardware',
         'software': 'Software',
-        'mantenimiento': 'Mantenimiento',
-        'reparacion': 'Reparación',
-        'recuperacion': 'Recuperación de Datos'
+        'maintenance': 'Maintenance',
+        'repair': 'Repair',
+        'recovery': 'Data Recovery'
     };
     
     return categories[category] || category;
 }
 
-// Función debounce para mejorar rendimiento
+// Debounce function to improve performance
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -1044,7 +1044,7 @@ function debounce(func, wait) {
     };
 }
 
-// === EXPORTAR FUNCIONES PARA PRUEBAS ===
+// === EXPORT FUNCTIONS FOR TESTS ===
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         initializeApp,

@@ -7,7 +7,7 @@
     <meta name="description"
         content="AB7ec - Professional computer repair, diagnostics, data recovery, and specialized technical services.">
     <meta name="author" content="Saúl Abraham Arana Calderón">
-    <title>AB7ec - Professional Computer Repair</title>
+    <title>AB7ec - Contact</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -53,18 +53,49 @@
 
     <!-- Main Content -->
     <main id="main-content">
-        <div id="contact-form"></div>
-    </main>
+    <form id="contact-form">
+        <h2>Contact Us</h2>
+
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" placeholder="example@mail.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="service">Service Type</label>
+            <select id="service" required>
+                <option value="" disabled selected>Select a service</option>
+                <option>PC Repair</option>
+                <option>Data Recovery</option>
+                <option>Maintenance</option>
+                <option>Custom Build</option>
+                <option>Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Describe the issue" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Send Message</button>
+
+        <div id="form-status" class="form-message" style="display:none;"></div>
+    </form>
+</main>
+
+
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
-                    <div class="footer-logo">
-                        <span class="logo-text">AB7ec</span>
-                        <span class="logo-subtext">Professional Computer Repair</span>
-                    </div>
                     <p class="footer-description">
                         Professional computer repair since 2015. Specialists in diagnostics, repair, and data recovery. 
                     </p>
@@ -112,6 +143,9 @@
         </div>
     </footer>
 
+
+    </div>
+    </footer>
 </body>
 
 </html>
