@@ -798,10 +798,11 @@ section {
 }
 
 .team-member img {
-    width: 120px;
-    height: 120px;
+    width: 190px;
+    height: 190px;
     border-radius: 50%;
     object-fit: cover;
+    object-position: 50% 25%;
     margin-bottom: var(--spacing-sm);
 }
 
